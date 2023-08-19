@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/pressentation/screens/onBoarding_screen.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tourism_app/pressentation/screens/splash_screen.dart';
 
 void main() {
-
   runApp(const MyApp());
-
 }
 
 class MyApp extends StatelessWidget {
@@ -13,13 +13,28 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-
-        useMaterial3: true,
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) => MaterialApp(
+        theme: ThemeData(
+          useMaterial3: true,
+        ),
+        debugShowCheckedModeBanner: false,
+        locale: const Locale('ar'),
+        // Set the locale to Arabic
+        localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: const [
+          Locale('ar'), // Add the Arabic locale to the supported locales
+          Locale('en'), // Add other supported locales if needed
+        ],
+        home: const SplashScreen(),
       ),
-      debugShowCheckedModeBanner: false,
-      home:  const SplashScreen(),
     );
   }
 }
