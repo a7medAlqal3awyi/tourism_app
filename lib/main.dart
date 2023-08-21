@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tourism_app/pressentation/screens/onBoarding_screen.dart';
+import 'package:tourism_app/pressentation/screens/auth_creeen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:tourism_app/pressentation/screens/splash_screen.dart';
+import 'package:tourism_app/pressentation/screens/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(360, 690),
+      designSize: const Size(375,812),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) => MaterialApp(
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           Locale('ar'), // Add the Arabic locale to the supported locales
           Locale('en'), // Add other supported locales if needed
         ],
-        home: const SplashScreen(),
+        home:  AuthScreen(),
       ),
     );
   }

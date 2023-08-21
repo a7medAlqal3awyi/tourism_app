@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
-import 'onBoarding_screen.dart';
+import 'on_boarding1.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -17,7 +17,9 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Future.delayed(const Duration(seconds: 2), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) =>  OnBoarding()));
+          context,
+          MaterialPageRoute(
+              builder: (context) => FirstOnBoarding(PageController())));
     });
     super.initState();
   }
@@ -25,11 +27,11 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppStyles.bgColor,
+      backgroundColor: AppStyles.Primary,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-           SizedBox(
+          SizedBox(
             height: 180.h,
           ),
           Center(
@@ -40,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
           SizedBox(
             height: 20.h,
           ),
-           Image(
+          Image(
             image: const AssetImage(
               'assets/images/blueLoading.gif',
             ),
