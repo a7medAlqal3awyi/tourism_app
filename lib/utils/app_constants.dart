@@ -29,8 +29,17 @@ class AppConstants {
   static String rememberMe = "تذكرني";
   static String signIn = "تسجيل الدخول";
   static String doYouForgetPassword = "هل نسيت كلمة المرور ؟";
+  static String forgetPassword = "نسيت كلمة المرور";
   static String orCompleteUsing = "أو أكمل باستخدام";
+  static String chooseTheMethod = "اختر الطريقة التى تود إعادة تعيين كلمة المرور من خلالها.";
+  static String bySMS = "عن طريق SMS الى رقم الهاتف";
+  static String number = "01025241470";
+  static String byEmail = "عن طريق البريد الالكتروني ";
+  static String myEmail = "a7medalqalawyi@gmail.com";
   static String or ="او";
+  static String follow ="متابعة";
+  static String verifyPhoneNumber ="تأكيد رقم الهاتف";
+  static String weSendVerificationNumber ="لقد قمنا بارسال رمز التأكيد الى الرقم";
 
 
 }

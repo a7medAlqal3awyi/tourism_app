@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/pressentation/widgets/screen_divider.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 import 'package:tourism_app/utils/app_styles.dart';
@@ -8,6 +9,7 @@ import '../widgets/custom_button_with_only_text.dart';
 import '../widgets/custom_form_field.dart';
 import '../widgets/row_of_G_G_A.dart';
 import '../widgets/text_and_text_button.dart';
+import 'forget_password_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -29,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 8.w),
+        padding: EdgeInsets.symmetric(horizontal: 8.w),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -86,7 +88,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ],
               ),
-
               CustomButtonWithOnlyText(
                 color: AppStyles.Primary,
                 text: AppConstants.signIn,
@@ -96,7 +97,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 20.h,
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.push(ForgetPasswordScreen());
+                },
                 child: Text(
                   AppConstants.doYouForgetPassword,
                   style: TextStyle(
@@ -109,11 +112,14 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               ScreenDivider(dividerText: AppConstants.orCompleteUsing),
               const RowOfGFA(),
-              SizedBox(height: 32.h,),
+              SizedBox(
+                height: 32.h,
+              ),
               TextAndTextButton(
                 txt: AppConstants.donotHaveAccount,
                 txtButton: AppConstants.createAccount,
-              ),        ],
+              ),
+            ],
           ),
         ),
       ),
