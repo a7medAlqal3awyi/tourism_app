@@ -40,6 +40,12 @@ class AppConstants {
   static String follow ="متابعة";
   static String verifyPhoneNumber ="تأكيد رقم الهاتف";
   static String weSendVerificationNumber ="لقد قمنا بارسال رمز التأكيد الى الرقم";
+  static String resend =" إعادة ارسال";
+  static String codeNotCome ="لم يصلك كود ؟ ";
+  static String createNewPassword ="إنشاء كلمة المرور الجديدة";
+  static String createNewPassword2 ="قم بإنشاء كلمة مرور جديدة";
+  static String enterNewPassword ="أدخل كلمة المرور الجديدة";
+  static String verifyNewPassword ="تأكيد كلمة المرور الجديدة";
 
 
 }
