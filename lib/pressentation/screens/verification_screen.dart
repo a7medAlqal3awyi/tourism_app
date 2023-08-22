@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
-import 'package:otp_pin_field/otp_pin_field.dart';
 import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/pressentation/screens/set_new_password.dart';
 import 'package:tourism_app/pressentation/widgets/count_down.dart';
@@ -52,34 +49,6 @@ class VerificationScreen extends StatelessWidget {
             SizedBox(
               height: 30.h,
             ),
-            OtpPinField(
-                fieldHeight: 54.h,
-                fieldWidth: 54.w,
-
-                onSubmit: (String text) {},
-                onChange: (String text) {},
-                otpPinFieldInputType:OtpPinFieldInputType.none,
-                keyboardType: TextInputType.number,
-                showCursor: false,
-                textInputAction: TextInputAction.done,
-                otpPinFieldStyle: OtpPinFieldStyle(
-                  defaultFieldBackgroundColor: Colors.grey.withOpacity(.08),
-                    filledFieldBackgroundColor: Colors.grey.withOpacity(.08),
-                    activeFieldBackgroundColor: Colors.white60,
-                    activeFieldBorderColor: AppStyles.Primary,
-                    fieldPadding:10 ,
-
-                    fieldBorderRadius: 12.w,
-                    textStyle: TextStyle(
-                      fontFamily: "Tajawal",
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w700,
-                    ),
-
-                ),
-                cursorWidth: 2,
-                mainAxisAlignment: MainAxisAlignment.center,
-                otpPinFieldDecoration: OtpPinFieldDecoration.custom),
             SizedBox(
               height: 30.h,
             ),
