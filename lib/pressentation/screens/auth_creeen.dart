@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/pressentation/screens/login_screen.dart';
+import 'package:tourism_app/pressentation/screens/register_screen.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
 import 'package:tourism_app/pressentation/widgets/screen_divider.dart';
@@ -81,6 +82,9 @@ class AuthScreen extends StatelessWidget {
           TextAndTextButton(
             txt: AppConstants.donotHaveAccount,
             txtButton: AppConstants.createAccount,
+            onPressed: (){
+              context.push(const RegisterScreen());
+            },
           ),
           //85,90
         ],

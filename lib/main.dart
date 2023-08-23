@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/pressentation/screens/auth_creeen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tourism_app/pressentation/screens/login_screen.dart';
+import 'package:tourism_app/pressentation/screens/presonal_details_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
           Locale('ar'), // Add the Arabic locale to the supported locales
           Locale('en'), // Add other supported locales if needed
         ],
-        home:  AuthScreen(),
+        home:  const PersonalDetailsScreen(),
       ),
     );
   }

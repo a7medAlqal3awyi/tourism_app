@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/core/helper.dart';
+import 'package:tourism_app/pressentation/screens/presonal_details_screen.dart';
+import 'package:tourism_app/pressentation/screens/register_screen.dart';
+import 'package:tourism_app/pressentation/widgets/check_box.dart';
 import 'package:tourism_app/pressentation/widgets/screen_divider.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 import 'package:tourism_app/utils/app_styles.dart';
@@ -24,7 +27,6 @@ class _LoginScreenState extends State<LoginScreen> {
   final emailController = TextEditingController();
 
   final passwordController = TextEditingController();
-  bool value = false;
 
   @override
   Widget build(BuildContext context) {
@@ -33,93 +35,105 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 8.w),
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Center(
-                child: SizedBox(
-                  width: 183.w,
-                  height: 72.h,
+          child: Form(
+            key: formKey,
+            child: Column(
+              children: [
+                Center(
+                  child: SizedBox(
+                    width: 183.w,
+                    height: 72.h,
+                    child: Text(
+                      AppConstants.signInToYourAccount,
+                      style: TextStyle(
+                          fontSize: 23.5.sp,
+                          fontFamily: 'Tajawal',
+                          fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20.h,
+                ),
+                CustomFormField(
+
+                  type: TextInputType.emailAddress,
+                  controller: emailController,
+                  label: AppConstants.email,
+                  prefixIconPath: 'assets/images/EmailIcon.svg',
+                  suffixIconPath: "",
+                  validate: (value) {
+                    if (value
+                        .toString()
+                        .isEmpty) {
+                      return AppConstants.emailValidation;
+                    } else {
+                      return null;
+                    }
+                  },
+                ),
+                CustomFormField(
+                  isPassword: true,
+                  ///ToDo
+                  // suffixPressed: ,
+                  type: TextInputType.visiblePassword,
+                  controller: passwordController,
+                  label: AppConstants.password,
+                  prefixIconPath: 'assets/images/LockIcon.svg',
+                  suffixIconPath: 'assets/images/Hide.svg',
+                  validate: (value) {
+                    if (value
+                        .toString()
+                        .isEmpty) {
+                      return AppConstants.passwordValidation;
+                    } else {
+                      return null;
+                    }
+                  },
+                ),
+                CustomCheckBox(title: AppConstants.rememberMe),
+                CustomButtonWithOnlyText(
+                  onTap: (){
+                    if(formKey.currentState!.validate()){
+                      context.pushAndRemove(const PersonalDetailsScreen());
+                    }
+                  },
+                  color: AppStyles.Primary,
+                  text: AppConstants.signIn,
+                  textColor: Colors.white,
+                ),
+                SizedBox(
+                  height: 20.h,
+                ),
+                TextButton(
+                  onPressed: () {
+                    context.push(const ForgetPasswordScreen());
+                  },
                   child: Text(
-                    AppConstants.signInToYourAccount,
+                    AppConstants.doYouForgetPassword,
                     style: TextStyle(
-                        fontSize: 23.5.sp,
-                        fontFamily: 'Tajawal',
-                        fontWeight: FontWeight.w700),
+                      fontFamily: "Tajawal",
+                      color: AppStyles.Primary,
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              CustomFormField(
-                textInputType: TextInputType.emailAddress,
-                textEditingController: emailController,
-                hitText: AppConstants.email,
-                prefixIconPath: 'assets/images/EmailIcon.svg',
-                suffixIconPath: "",
-              ),
-              CustomFormField(
-                textInputType: TextInputType.visiblePassword,
-                textEditingController: passwordController,
-                hitText: AppConstants.password,
-                prefixIconPath: 'assets/images/LockIcon.svg',
-                suffixIconPath: "assets/images/Hide.svg",
-              ),
-              Row(
-                children: [
-                  Checkbox(
-                    value: value,
-                    focusColor: Colors.grey,
-                    checkColor: Colors.white,
-                    activeColor: Colors.blue,
-                    onChanged: (value) {
-                      setState(() {
-                        value != value;
-                      });
-                    },
-                    shape: const CircleBorder(),
-                  ),
-                  Text(
-                    AppConstants.rememberMe,
-                    style: TextStyle(
-                        fontFamily: "Tajawal",
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14.sp),
-                  ),
-                ],
-              ),
-              CustomButtonWithOnlyText(
-                color: AppStyles.Primary,
-                text: AppConstants.signIn,
-                textColor: Colors.white,
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              TextButton(
-                onPressed: () {
-                  context.push(ForgetPasswordScreen());
-                },
-                child: Text(
-                  AppConstants.doYouForgetPassword,
-                  style: TextStyle(
-                    fontFamily: "Tajawal",
-                    color: AppStyles.Primary,
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w700,
-                  ),
+                ScreenDivider(dividerText: AppConstants.orCompleteUsing),
+                const RowOfGFA(),
+                SizedBox(
+                  height: 32.h,
                 ),
-              ),
-              ScreenDivider(dividerText: AppConstants.orCompleteUsing),
-              const RowOfGFA(),
-              SizedBox(
-                height: 32.h,
-              ),
-              TextAndTextButton(
-                txt: AppConstants.donotHaveAccount,
-                txtButton: AppConstants.createAccount,
-              ),
-            ],
+                TextAndTextButton(
+                  onPressed: (){
+                    context.push(RegisterScreen());
+                  },
+                  txt: AppConstants.donotHaveAccount,
+                  txtButton: AppConstants.createAccount,
+
+                ),
+              ],
+            ),
           ),
         ),
       ),

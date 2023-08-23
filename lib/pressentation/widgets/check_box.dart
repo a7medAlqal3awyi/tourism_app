@@ -1,35 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../utils/app_constants.dart';
-
 class CustomCheckBox extends StatefulWidget {
-  const CustomCheckBox({super.key});
+  final String title;
+
+  const CustomCheckBox({
+    Key? key,
+    required this.title,
+  }) : super(
+          key: key,
+        );
 
   @override
   State<CustomCheckBox> createState() => _CustomCheckBoxState();
 }
 
 class _CustomCheckBoxState extends State<CustomCheckBox> {
-  bool value=false;
+  bool? check = false;
+
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Checkbox(
-          value: value,
+          value: check,
           focusColor: Colors.grey,
           checkColor: Colors.white,
           activeColor: Colors.blue,
-          onChanged: (value) {
+          onChanged: (bool? value) {
             setState(() {
-              value != value;
+              check = value;
             });
           },
           shape: const CircleBorder(),
         ),
         Text(
-          AppConstants.rememberMe,
+          widget.title,
           style: TextStyle(
               fontFamily: "Tajawal",
               fontWeight: FontWeight.w500,

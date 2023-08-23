@@ -22,6 +22,7 @@ class AppConstants {
   static String completeWithApple = " اكمل باستخدام ابل ";
   static String donotHaveAccount = " لا تمتلك حساب؟ ";
   static String createAccount = "إنشاء حساب";
+  static String createNewAccount = "إنشاء حساب جديد";
   static String signWithPassward = "الدخول باستخدام كلمة المرور";
   static String signInToYourAccount = "تسجيل الدخول الى حسابك";
   static String email = "البريد الالكتروني";
@@ -41,11 +42,26 @@ class AppConstants {
   static String verifyPhoneNumber ="تأكيد رقم الهاتف";
   static String weSendVerificationNumber ="لقد قمنا بارسال رمز التأكيد الى الرقم";
   static String resend =" إعادة ارسال";
+  static String complete ="استمرار";
   static String codeNotCome ="لم يصلك كود ؟ ";
   static String createNewPassword ="إنشاء كلمة المرور الجديدة";
   static String createNewPassword2 ="قم بإنشاء كلمة مرور جديدة";
   static String enterNewPassword ="أدخل كلمة المرور الجديدة";
   static String verifyNewPassword ="تأكيد كلمة المرور الجديدة";
-
+  static String changePasswordSuccess ="تم إعادة تعيين كلمة المرور بنجاح";
+  static String ourConstrains =" الشروط و الاحكام الخاصة بنا.";
+  static String whileYouCreateNewAcc =" من خلال إنشاء حساب جديد. فإنك توافق على ";
+  static String alreadyHaveAccount =" تمتلك حساب بالفعل؟ ";
+  static String emailValidation =" يجب ادخل البريد الالكروني ";
+  static String passwordValidation  =" يجب ادخل كلمة المرور ";
+  static String completeYourPersonalProfile  =" أكمل ملفك الشخصي ";
+  static String choosePersonalImage  =" إختيار صورة شخصية ";
+  static String fullName =" الاسم الكامل ";
+  static String enterFullName =" أدخل اسمك بالكامل ";
+  static String enterYourEmail =" أدخل بريدك الالكتروني ";
+  static String enterYourBirthdate =" أدخل تاريخ الميلادك ";
+  static String enterYourPhone =" أدخل رقم الهاتفك ";
+  static String yourBirthdate =" تاريخ الميلاد ";
+  static String yourPhone =" رقم الهاتف ";
 
 }
