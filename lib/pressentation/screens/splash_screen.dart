@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tourism_app/pressentation/screens/on_boarding_screen.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
-import 'on_boarding1.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-              builder: (context) => FirstOnBoarding(PageController())));
+              builder: (context) => const OnBoardingScreen()));
     });
     super.initState();
   }

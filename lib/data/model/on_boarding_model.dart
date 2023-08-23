@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 
 class OnBoardingModel {
-  Widget textWidget;
-  Widget shapeWidget;
+  Widget richTextWidget;
+  Widget avatarWidget;
   String description;
 
   String image;
 
   OnBoardingModel({
-    required this.shapeWidget,
-    required this.textWidget,
-    required this.description,
     required this.image,
+    required this.avatarWidget,
+    required this.richTextWidget,
+    required this.description,
   });
 }

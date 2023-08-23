@@ -31,7 +31,9 @@ Widget CustomFormField({
           validator: validate,
           decoration: InputDecoration(
             prefixIcon: Padding(
-              padding: EdgeInsets.symmetric(vertical:15.w),
+              padding: EdgeInsets.only(top:15.h,
+                  bottom: 15.h,
+                  left:7.w),
               child: SvgPicture.asset(
                 prefixIconPath!,
               ),

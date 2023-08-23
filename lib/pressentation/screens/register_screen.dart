@@ -88,7 +88,7 @@ class RegisterScreen extends StatelessWidget {
               CustomButtonWithOnlyText(
                   onTap: () {
                     if(formKey.currentState!.validate()){
-                      context.pushAndRemove(const PersonalDetailsScreen());
+                      context.push(const PersonalDetailsScreen());
                     }
                   },
                   color: AppStyles.Primary,
