@@ -39,7 +39,7 @@ class ShowDiaolog extends StatelessWidget {
             CustomButtonWithOnlyText(
               onTap: (){
                 Navigator.of(context).pop();
-                context.pushAndRemove(const HomeScreen());
+                context.pushAndRemove( HomeScreen());
               },
               color: AppStyles.Primary,
               text: "استمر",

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/pressentation/screens/home/home.dart';
-import 'package:tourism_app/pressentation/screens/presonal_details_screen.dart';
 import 'package:tourism_app/pressentation/screens/register_screen.dart';
 import 'package:tourism_app/pressentation/widgets/check_box.dart';
 import 'package:tourism_app/pressentation/widgets/screen_divider.dart';
@@ -96,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 CustomButtonWithOnlyText(
                   onTap: (){
                     if(formKey.currentState!.validate()){
-                      context.pushAndRemove(const HomeScreen());
+                      context.pushAndRemove( HomeScreen());
                     }
                   },
                   color: AppStyles.Primary,

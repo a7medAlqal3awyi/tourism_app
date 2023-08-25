@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
           Locale('ar'), // Add the Arabic locale to the supported locales
           Locale('en'), // Add other supported locales if needed
         ],
-        home:  const HomeScreen (),
+        home:  HomeScreen (),
       ),
     );
   }

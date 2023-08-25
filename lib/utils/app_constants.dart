@@ -69,5 +69,12 @@ class AppConstants {
   static String searchByPlaceOrCountry =" قم بالبحث بإسم المكان او البلد";
   static String labikOmraa =" لبيك عمرة";
   static String makaaSudia =" مكة - السعودية";
+  static String aqsaDes =" أول القبلتين";
+  static String aqsaLoc ="الاقصي -القدس-فلسطين";
+  static String antherOffers ="عروض أخرى";
+  static String viewAll ="عرض الكل";
+  static String fourSeason ="فندق الفورسيزون";
+  static String duration ="3 ستمبر - 6 ستمبر";
+  static String peopleJoined ="إنضم 30 شخصا";
 
 }

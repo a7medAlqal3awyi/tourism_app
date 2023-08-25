@@ -1,19 +1,94 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tourism_app/pressentation/widgets/double_text.dart';
 import 'package:tourism_app/pressentation/widgets/home_appbar.dart';
+import 'package:tourism_app/pressentation/widgets/suggestion_item.dart';
 import 'package:tourism_app/utils/app_constants.dart';
+import 'package:tourism_app/utils/app_styles.dart';
 
+import '../../../data/model/offer_model.dart';
+import '../../../data/model/suggestion_model.dart';
 import '../../widgets/elliose1.dart';
 import '../../widgets/home_scearch.dart';
+import '../../widgets/othe_offer_item.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
+
+  final List<OffersModel> offers = [
+    OffersModel(
+        image:
+            'https://luxurytravelmom.com/wp-content/uploads/2017/04/four-seasons-orlando-review-luxury-hotel-luxury-travel-mom.jpg',
+        place: AppConstants.fourSeason,
+        duration: AppConstants.duration,
+        rate: 4.9,
+        price: 5200),
+    OffersModel(
+        image:
+            'https://luxurytravelmom.com/wp-content/uploads/2017/04/four-seasons-orlando-review-luxury-hotel-luxury-travel-mom.jpg',
+        place: AppConstants.fourSeason,
+        duration: AppConstants.duration,
+        rate: 4.9,
+        price: 5200),
+    OffersModel(
+        image:
+            'https://luxurytravelmom.com/wp-content/uploads/2017/04/four-seasons-orlando-review-luxury-hotel-luxury-travel-mom.jpg',
+        place: AppConstants.fourSeason,
+        duration: AppConstants.duration,
+        rate: 4.9,
+        price: 5200),
+    OffersModel(
+        image:
+            'https://luxurytravelmom.com/wp-content/uploads/2017/04/four-seasons-orlando-review-luxury-hotel-luxury-travel-mom.jpg',
+        place: AppConstants.fourSeason,
+        duration: AppConstants.duration,
+        rate: 4.9,
+        price: 5200),
+    OffersModel(
+        image:
+            'https://luxurytravelmom.com/wp-content/uploads/2017/04/four-seasons-orlando-review-luxury-hotel-luxury-travel-mom.jpg',
+        place: AppConstants.fourSeason,
+        duration: AppConstants.duration,
+        rate: 4.9,
+        price: 5200),
+    OffersModel(
+        image:
+            'https://luxurytravelmom.com/wp-content/uploads/2017/04/four-seasons-orlando-review-luxury-hotel-luxury-travel-mom.jpg',
+        place: AppConstants.fourSeason,
+        duration: AppConstants.duration,
+        rate: 4.9,
+        price: 5200),
+
+  ];
+  final List<SuggestionModel> suggestions = [
+    SuggestionModel(
+        image:
+            "https://th.bing.com/th/id/R.a0b057e83a341e92941b9f2c494c6ab1?rik=fplOLhvDYEZBPg&pid=ImgRaw&r=0",
+        title: AppConstants.labikOmraa,
+        location: AppConstants.makaaSudia),
+    SuggestionModel(
+        image:
+            "https://images.unsplash.com/photo-1594970484107-5ac7d46a7259?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1548&q=80",
+        title: AppConstants.aqsaDes,
+        location: AppConstants.aqsaLoc),
+    SuggestionModel(
+        image:
+            "https://th.bing.com/th/id/OIP.h2fnjkdyQopo0_YV7wsKeAAAAA?pid=ImgDet&rs=1",
+        title: AppConstants.labikOmraa,
+        location: AppConstants.makaaSudia),
+    SuggestionModel(
+        image:
+            "https://images.unsplash.com/photo-1513072064285-240f87fa81e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1527&q=80",
+        title: AppConstants.labikOmraa,
+        location: AppConstants.makaaSudia),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
+        scrollDirection: Axis.vertical,
         children: [
           Stack(
             children: [
@@ -32,90 +107,32 @@ class HomeScreen extends StatelessWidget {
               const HomeSearch(),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Card(
-              color: Colors.white,
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              child: Container(
-                padding: EdgeInsets.all(15.w),
-                child: Column(
-                  children: [
-                    Container(
-                      width: 340.w,
-                      height: 286.h,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.w),
-                          image: const DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                  "https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a2FhYmF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60"))),
-                    ),
-                    SizedBox(
-                      height: 15.h,
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text(
-                          AppConstants.labikOmraa,
-                          style: TextStyle(
-                            fontFamily: AppConstants.fontFamily,
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        const Spacer(),
-                        const Icon(
-                          Icons.star,
-                          color: Color(0xffFFD336),
-                        ),
-                        Text(
-                          "4.5",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 14.sp,
-                              fontFamily: AppConstants.fontFamily),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      height: 15.h,
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                            height: 20,
-                            width: 20,
-                            child:
-                                SvgPicture.asset("assets/images/Location.svg")),
-                        Text(
-                          AppConstants.makaaSudia,
-                          style: TextStyle(
-                            fontFamily: AppConstants.fontFamily,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 12.sp,
-                            color: const Color(0xff828282),
-                          ),
-                        ),
-                        Spacer(),
-                        Container(
-                          width: 24.w,
-                          height: 24.h,
-                          decoration: BoxDecoration(
-                              color: const Color(0xffE5F4FF),
-                              borderRadius: BorderRadius.circular(12.w)),
-                          child: const Text(
-                            "50+",
-                            style: TextStyle(
-                                fontSize: 11, fontWeight: FontWeight.w400),
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
+          SizedBox(
+            height: 397.h,
+            child: ListView.builder(
+              itemBuilder: (context, index) => SuggestionItem(
+                model: suggestions[index],
               ),
+              physics: const BouncingScrollPhysics(),
+              itemCount: suggestions.length,
+              scrollDirection: Axis.horizontal,
+              shrinkWrap: true,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.0.h),
+            child: DoubleText(
+              firstText: AppConstants.antherOffers,
+              secondText: AppConstants.viewAll,
+            ),
+          ),
+          ListView.builder(
+            shrinkWrap: true,
+            physics: const BouncingScrollPhysics(),
+
+            itemCount: offers.length,
+            itemBuilder: (context, index) => OtherOffersItem(
+              model: offers[index],
             ),
           )
         ],
