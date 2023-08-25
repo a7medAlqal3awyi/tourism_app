@@ -16,7 +16,8 @@ class NewPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var textController = TextEditingController();
+    var passwordController = TextEditingController();
+    var verifyPasswordController = TextEditingController();
     var textControllerConfirm = TextEditingController();
 
     return Scaffold(
@@ -61,20 +62,24 @@ class NewPassword extends StatelessWidget {
               ),
               ///ToDo
 
-              // CustomFormField(
-              //   textInputType: TextInputType.visiblePassword,
-              //   prefixIconPath: 'assets/images/LockIcon.svg',
-              //   hitText: AppConstants.enterNewPassword,
-              //   textEditingController: textController,
-              //   suffixIconPath: "",
-              // ),
-              // CustomFormField(
-              //   textInputType: TextInputType.visiblePassword,
-              //   prefixIconPath: 'assets/images/LockIcon.svg',
-              //   hitText: AppConstants.verifyNewPassword,
-              //   textEditingController: textControllerConfirm,
-              //   suffixIconPath: "",
-              // ),
+              CustomFormField(
+                type: TextInputType.visiblePassword,
+                prefixIconPath: 'assets/images/LockIcon.svg',
+                label:  AppConstants.enterNewPassword,
+                suffixIconPath: "assets/images/Hide.svg",
+                controller: passwordController,
+                isPassword: true,
+
+              ),
+              CustomFormField(
+                type: TextInputType.visiblePassword,
+                prefixIconPath: 'assets/images/LockIcon.svg',
+                label:  AppConstants.verifyNewPassword,
+                suffixIconPath: "assets/images/Hide.svg",
+                controller: verifyPasswordController,
+                isPassword: true,
+
+              ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                 child:  CustomCheckBox(
@@ -84,7 +89,7 @@ class NewPassword extends StatelessWidget {
               const Spacer(),
               CustomButtonWithOnlyText(
                   onTap: () {
-                    context.push(ShowDiaolog());
+                    context.push(const ShowDiaolog());
                   },
                   color: const Color(0xffba7b0be),
                   text: AppConstants.follow,

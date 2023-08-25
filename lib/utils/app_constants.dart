@@ -16,6 +16,7 @@ class AppConstants {
   static String alfarida = "الفريدة";
   static String descriptionOnBoarding3 =
       "ستحصل على تجربة سفر فريدة لا مثيل لها. نحن نجمع بين الابتكار التكنولوجي والتجارب الثقافية لنقدم لك أفضل ما في السياحة العالمية. احجز رحلتك الأولى الآن ودعنا نجعل كل لحظة تجربة لا تُنسى.";
+  static String fontFamily = "Tajawal";
   static String joinToMostakbal = "انضم الى المستقبل الآن";
   static String completeWithFacebook = "اكمل باستخدام فيسبوك";
   static String completeWithGoogle = " اكمل باستخدام جوجل";
@@ -63,5 +64,10 @@ class AppConstants {
   static String enterYourPhone =" أدخل رقم الهاتفك ";
   static String yourBirthdate =" تاريخ الميلاد ";
   static String yourPhone =" رقم الهاتف ";
+  static String wellcomeAhmed =" مرحبا, احمد";
+  static String weHereToServeYou =" نحن هنا لخدمتك.";
+  static String searchByPlaceOrCountry =" قم بالبحث بإسم المكان او البلد";
+  static String labikOmraa =" لبيك عمرة";
+  static String makaaSudia =" مكة - السعودية";
 
 }

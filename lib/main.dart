@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:tourism_app/pressentation/screens/home/home.dart';
 import 'package:tourism_app/pressentation/screens/splash_screen.dart';
 
 void main() {
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
+
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(375,812),
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
           Locale('ar'), // Add the Arabic locale to the supported locales
           Locale('en'), // Add other supported locales if needed
         ],
-        home:  const SplashScreen (),
+        home:  const HomeScreen (),
       ),
     );
   }
