@@ -5,6 +5,7 @@ import 'package:tourism_app/data/model/offer_model.dart';
 
 import '../../utils/app_constants.dart';
 import '../../utils/app_styles.dart';
+import 'icon_favorite.dart';
 
 class OtherOffersItem extends StatelessWidget {
   const OtherOffersItem({super.key, required this.model, this.onTap});
@@ -39,19 +40,7 @@ class OtherOffersItem extends StatelessWidget {
                         ),
                       )
                   ),
-                  GestureDetector(
-                    onTap:onTap,
-                    child: Padding(
-                      padding: EdgeInsets.all(8.h),
-                      child: CircleAvatar(
-                        radius: 12,
-                        backgroundColor:
-                        const Color(0Xff1B1E28).withOpacity(.2),
-                        child: SvgPicture.asset("assets/images/Heart.svg"),
-                      ),
-                    ),
-                  ),
-
+                  const FavouriteIcon()
                 ],
               ),
               SizedBox(

@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tourism_app/data/model/suggestion_model.dart';
 
 import '../../utils/app_constants.dart';
+import 'icon_favorite.dart';
 
 class SuggestionItem extends StatelessWidget {
   SuggestionItem({super.key, this.onTap,required this.model});
@@ -38,18 +39,9 @@ class SuggestionItem extends StatelessWidget {
                       ),
                     ),
                   ),
-                  GestureDetector(
-                    onTap: onTap,
-                    child: Padding(
-                      padding: EdgeInsets.all(8.h),
-                      child: CircleAvatar(
-                        radius: 16,
-                        backgroundColor:
-                            const Color(0Xff1B1E28).withOpacity(.2),
-                        child: SvgPicture.asset("assets/images/Heart.svg"),
-                      ),
-                    ),
-                  ),
+                  const FavouriteIcon(
+
+                  )
                 ],
               ),
               SizedBox(

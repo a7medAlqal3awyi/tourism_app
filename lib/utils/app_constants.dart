@@ -76,5 +76,18 @@ class AppConstants {
   static String fourSeason ="فندق الفورسيزون";
   static String duration ="3 ستمبر - 6 ستمبر";
   static String peopleJoined ="إنضم 30 شخصا";
+  static String reserveNow ="احجز الآن";
+  static String planToYourJourney ="خطط لرجلتك القادمة الآن";
+  static String spendLongWithFriends ="اقضي المزيد من اللحظات مع العائلة و الاصدقاء. اختر ما يناسبك من عروضنت.";
+  static String discount ="خصم 40%";
+  static String watchedLater ="تمت مشاهدتها";
+  static String maldifes ="الملديف";
+  static String asia ="اسيا اندونسيا";
+  static String alalamen ="العالمين";
+  static String alsa7el ="الساحل الشمالي";
+  static String matro7 ="مرسي مطروح";
+  static String night ="ليلة ";
+  static String theOffers ="العروض";
+
 
 }
