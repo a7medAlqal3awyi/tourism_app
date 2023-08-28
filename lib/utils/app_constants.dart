@@ -117,6 +117,11 @@ class AppConstants {
   static String restaurants ="المطاعم";
   static String reception ="الريسيبشن";
   static String rooms ="الغرف";
+  static String rates ="التقييمات";
+  static String writeYrRates ="اكتب تقييمك";
+  static String ahmedAlqal3awyi ="احمد القلعاوي ";
+  static String date ="6 اكتوبر 2023";
+  static String ratedDescription ="يقع فندق العقيق في المدينة المنورة، وعلى بعد بضع خطوات فقط من الحرم النبوي الشريف،";
   static String aboutJourneyDescription ="مزارات بالمدينه المنورة ومكة المكرمة و مشرف متخصص مرافق للرحلةالانتقالات الداخلية بأتوبيسات حديثه فاخرة ومكيفة و هدايا قيمة من الشركة و مصروفات استخراج التأشيرة والباركودوالاقامة فى الفنادق المذكورة أو ما يماثلها فى حالة عدم توافرهاونظام الوجبات :الافطار فقط... ";
 
 

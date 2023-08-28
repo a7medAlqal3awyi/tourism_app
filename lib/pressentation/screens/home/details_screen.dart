@@ -11,6 +11,7 @@ import 'package:tourism_app/utils/app_styles.dart';
 
 import '../../widgets/details_app_bar.dart';
 import '../../widgets/full_screen.dart';
+import '../rates_screen.dart';
 
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({
@@ -160,33 +161,45 @@ class DetailsScreen extends StatelessWidget {
                               color: const Color(0xff828282),
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsets.only(right: 8.w, left: 5.w),
-                            child: const Icon(
-                              Icons.star,
-                              size: 20,
-                              color: Color(0xffFFD336),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 8.w),
-                            child: Text(
-                              "${suggestionModel.rate}",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 16.sp,
-                                  fontFamily: AppConstants.fontFamily),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 8.w),
-                            child: Text(
-                              "(2465)",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 16.sp,
-                                  color: AppStyles.Primary,
-                                  fontFamily: AppConstants.fontFamily),
+                          GestureDetector(
+                            onTap: (){
+                              context.push(RatesScreen(suggestionModel: suggestionModel,));
+                            },
+                            child: Wrap(
+                              children: [
+
+                                Padding(
+                                  padding: EdgeInsets.only(right: 8.w, left: 5.w),
+                                  child: const Icon(
+                                    Icons.star,
+                                    size: 20,
+                                    color: Color(0xffFFD336),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 8.w),
+                                  child: Text(
+                                    "${suggestionModel.rate}",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16.sp,
+                                        fontFamily: AppConstants.fontFamily),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 8.w),
+                                  child: Text(
+                                    "(2465)",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16.sp,
+                                        color: AppStyles.Primary,
+                                        fontFamily: AppConstants.fontFamily),
+                                  ),
+                                ),
+
+                              ],
+
                             ),
                           ),
                           const Spacer(),
