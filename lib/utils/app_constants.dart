@@ -6,7 +6,8 @@ class AppConstants {
   static String descriptionOnBoarding1 =
       " مع المستقبل، لديك الفرصة لاكتشاف أكثر الوجهات السياحية إثارة في جميع أنحاء العالم. اختر الوجهة التي تحلم بزيارتها، وسنوفر لك حزم رحلات مخصصة تتناسب مع اهتماماتك وميزانيتك.";
 
-  static String reserve = " حجز ";
+  static String book = " حجز ";
+  static String bookNow = "حجز الآن";
   static String ticket = " التزاكر ";
   static String descriptionOnBoarding2 =
       " نتيح لك حجز تذاكر الطيران بكل يسر وسهولة. قم بتحديد وقت السفر والعودة، واحصل على أفضل العروض والأسعار المناسبة لك.";
@@ -101,6 +102,22 @@ class AppConstants {
   static String removeAll ="مسح الكل ";
   static String alqibla ="فندق القبلة";
   static String alsa3aHotel ="فندق الساعة";
+  static String aboutJourney ="عن الرحلة ";
+  static String showMore ="عرض المزيد";
+  static String facilities ="المرافق";
+  static String wifi ="واي فاي";
+  static String tv ="تلفزيون";
+  static String kitchen ="مطبخ";
+  static String conditioner ="مكيف";
+  static String washingMachine ="غسالة";
+  static String window ="شرفة";
+  static String photos ="الصور";
+  static String halls ="الصالات";
+  static String parking ="الباركينج";
+  static String restaurants ="المطاعم";
+  static String reception ="الريسيبشن";
+  static String rooms ="الغرف";
+  static String aboutJourneyDescription ="مزارات بالمدينه المنورة ومكة المكرمة و مشرف متخصص مرافق للرحلةالانتقالات الداخلية بأتوبيسات حديثه فاخرة ومكيفة و هدايا قيمة من الشركة و مصروفات استخراج التأشيرة والباركودوالاقامة فى الفنادق المذكورة أو ما يماثلها فى حالة عدم توافرهاونظام الوجبات :الافطار فقط... ";
 
 
 }

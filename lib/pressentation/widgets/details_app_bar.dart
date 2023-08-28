@@ -4,17 +4,17 @@ import 'package:flutter_svg/svg.dart';
 import 'package:tourism_app/core/helper.dart';
 
 import 'custom_icon.dart';
+
 class DetailsAppBar extends StatelessWidget {
   const DetailsAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return             Positioned(
-      top: 40,
+    return Positioned(
+      top: 60,
       right: 16,
-
       child: SizedBox(
-        width:343.w ,
+        width: 343.w,
         height: 36.h,
         child: Row(
           children: [
@@ -31,12 +31,12 @@ class DetailsAppBar extends StatelessWidget {
             CustomIcon(
               iconWidget: SvgPicture.asset("assets/images/Heart.svg"),
             ),
-            SizedBox(width: 20.w,),
+            SizedBox(
+              width: 20.w,
+            ),
             CustomIcon(
               iconWidget: SvgPicture.asset("assets/images/Share.svg"),
             ),
-
-
           ],
         ),
       ),

@@ -30,7 +30,8 @@ class _CustomTapBarState extends State<CustomTapBar>
           image:
           "https://th.bing.com/th/id/R.a0b057e83a341e92941b9f2c494c6ab1?rik=fplOLhvDYEZBPg&pid=ImgRaw&r=0",
           title: AppConstants.labikOmraa,
-          location: AppConstants.makaaSudia, rate: 4.9),
+          location: AppConstants.makaaSudia,
+          rate: 4.9),
       SuggestionModel(
           name: AppConstants.alqibla,
           image:
@@ -38,18 +39,19 @@ class _CustomTapBarState extends State<CustomTapBar>
           title: AppConstants.aqsaDes,
           location: AppConstants.aqsaLoc, rate: 4.8),
       SuggestionModel(
-          name: AppConstants.alsa3aHotel,
-          image:
-          "https://th.bing.com/th/id/OIP.h2fnjkdyQopo0_YV7wsKeAAAAA?pid=ImgDet&rs=1",
-          title: AppConstants.labikOmraa,
-          location: AppConstants.makaaSudia, rate: 5),
-      SuggestionModel(
           name: AppConstants.azkaSafaHotel,
 
           image:
           "https://images.unsplash.com/photo-1513072064285-240f87fa81e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1527&q=80",
           title: AppConstants.labikOmraa,
           location: AppConstants.makaaSudia, rate: 4.7),
+      SuggestionModel(
+          name: AppConstants.alsa3aHotel,
+          image:
+          "https://th.bing.com/th/id/OIP.h2fnjkdyQopo0_YV7wsKeAAAAA?pid=ImgDet&rs=1",
+          title: AppConstants.labikOmraa,
+          location: AppConstants.makaaSudia, rate: 5),
+
     ];
 
     TabController tapController =

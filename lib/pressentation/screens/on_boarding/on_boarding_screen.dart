@@ -73,7 +73,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       richTextWidget: RichText(
         locale: const Locale('ar'),
         text: TextSpan(
-          text: AppConstants.reserve,
+          text: AppConstants.book,
           style: TextStyle(
             fontSize: 24.sp,
             color: Colors.black,

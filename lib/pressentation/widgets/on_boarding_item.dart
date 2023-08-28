@@ -1,6 +1,3 @@
-
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/core/helper.dart';
@@ -8,9 +5,8 @@ import 'package:tourism_app/data/model/on_boarding_model.dart';
 import 'package:tourism_app/pressentation/screens/auth_creeen.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
-
 Widget buildOnBoardingItem(
-    BuildContext context,
+  BuildContext context,
   OnBoardingModel model,
   bool isLast,
   PageController boardingController,
@@ -66,7 +62,7 @@ Widget buildOnBoardingItem(
                 elevation: 0,
                 onPressed: () {
                   if (isLast) {
-                    context.pushAndRemove(const AuthScreen()) ;
+                    context.pushAndRemove(const AuthScreen());
                   } else {
                     boardingController.nextPage(
                       duration: const Duration(
