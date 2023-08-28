@@ -88,6 +88,19 @@ class AppConstants {
   static String matro7 ="مرسي مطروح";
   static String night ="ليلة ";
   static String theOffers ="العروض";
+  static String sharmElshekh ="شرم الشيخ";
+  static String southSini ="جنوب سيناء";
+  static String search ="البحث";
+  static String suggestedForYou ="مقترح لك ";
+  static String  inTourism="سياحة داخلية ";
+  static String outTourism ="سياحة خارجية ";
+  static String honeymoon ="شهر العسل";
+  static String azkaSafaHotel ="فندق ازكا الصفا ";
+  static String haagAndOmra ="مقترح لك ";
+  static String previousSearches ="عمليات البحث السابقة ";
+  static String removeAll ="مسح الكل ";
+  static String alqibla ="فندق القبلة";
+  static String alsa3aHotel ="فندق الساعة";
 
 
 }

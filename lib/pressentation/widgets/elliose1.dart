@@ -10,7 +10,7 @@ class Ellipse extends StatelessWidget {
       scale: 1.5,
       alignment: Alignment.bottomLeft,
       child: Container(
-        height: 230.h,
+        height: 180.h,
         width: 280.w,
         decoration: BoxDecoration(
           shape: BoxShape.circle,

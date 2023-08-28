@@ -10,22 +10,22 @@ class HomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
             width: 144.w,
-            height: 60.h,
+            height: 44.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(42.w),
               color: Colors.white,
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.all(8.h),
+                  padding: EdgeInsets.only(right:2.h),
                   child: const CircleAvatar(
                     foregroundImage: AssetImage("assets/images/ahmed.jpg"),
                     radius: 20,
@@ -50,13 +50,16 @@ class HomeAppBar extends StatelessWidget {
                   color: const Color(0XFFF5F4F8),
                   borderRadius: BorderRadius.circular(22),
                 ),
-                child: SvgPicture.asset("assets/images/Notification.svg"),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SvgPicture.asset("assets/images/Notification.svg"),
+                ),
               ),
               Padding(
-                padding: EdgeInsets.only(right: 5.w, top: 5.h),
+                padding: EdgeInsets.only(right: 10.w, top: 10.h),
                 child: Container(
-                  width: 15.w,
-                  height: 15.h,
+                  width: 10.w,
+                  height: 10.h,
                   decoration: const BoxDecoration(
                     color: Colors.white,
                     shape: BoxShape.circle,
@@ -64,10 +67,10 @@ class HomeAppBar extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(7.0),
+                padding: const EdgeInsets.all(10.0),
                 child: Container(
-                  width: 10.w,
-                  height: 10.h,
+                  width: 8.w,
+                  height: 8.h,
                   decoration: const BoxDecoration(
                     color: Color(0xffFF7029),
                     shape: BoxShape.circle,

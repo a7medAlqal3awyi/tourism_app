@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../data/model/watched_later_model.dart';
 import '../../utils/app_constants.dart';
 import '../../utils/app_styles.dart';
+import 'icon_favorite.dart';
 
 class WatchedLaterItem extends StatelessWidget {
   const WatchedLaterItem({super.key, required this.model});
@@ -25,18 +26,23 @@ class WatchedLaterItem extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                width: 137.w,
-                height: 124.h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16.w),
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage(
-                      model.image,
+              Stack(
+                children: [
+                  Container(
+                    width: 137.w,
+                    height: 124.h,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16.w),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(
+                          model.image,
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                  const FavouriteIcon(),
+                ],
               ),
               SizedBox(
                 height: 5.w,

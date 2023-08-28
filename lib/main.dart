@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tourism_app/pressentation/screens/home/home.dart';
-import 'package:tourism_app/pressentation/screens/splash_screen.dart';
+import 'package:tourism_app/pressentation/screens/on_boarding/splash_screen.dart';
+import 'package:tourism_app/pressentation/widgets/custom_tap_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,10 +13,9 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375,812),
+      designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) => MaterialApp(
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
           Locale('ar'), // Add the Arabic locale to the supported locales
           Locale('en'), // Add other supported locales if needed
         ],
-        home:  HomeScreen (),
+        home: HomeScreen(),
       ),
     );
   }

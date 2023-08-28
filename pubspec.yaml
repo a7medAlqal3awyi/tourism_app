@@ -23,6 +23,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
+  full_screen_image_null_safe: ^2.0.0
 
 dev_dependencies:
   flutter_test:

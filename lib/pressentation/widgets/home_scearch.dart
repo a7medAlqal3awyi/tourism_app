@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:tourism_app/core/helper.dart';
 
 import '../../utils/app_constants.dart';
-import '../screens/search_screen.dart';
+import '../screens/home/search_screen.dart';
 
 class HomeSearch extends StatelessWidget {
   const HomeSearch({super.key,});
@@ -12,10 +12,10 @@ class HomeSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: 130,
+      top: 120,
       child: GestureDetector(
         onTap: (){
-          context.push(const SearchScreen());
+          context.push( const SearchScreen());
         },
         child: Container(
           width: 343.w,
