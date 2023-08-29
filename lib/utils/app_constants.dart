@@ -131,6 +131,9 @@ class AppConstants {
   static String startDate =  '25 اغسطس ';
   static String endDate =  "2 سبتمبر";
   static String neededPrice =  "المبلغ المطلوب";
+  static String bookingPersonalDetails =  "بيانات الحجز";
+  static String enterNickName =  "أدخل لقبك";
+  static String nickName =  "أدخل لقبك";
 
 
 }

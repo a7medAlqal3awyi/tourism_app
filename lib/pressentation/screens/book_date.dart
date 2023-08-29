@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
 import '../widgets/booking_details.dart';
 import '../widgets/month_calender.dart';
+import 'booking_personal_details.dart';
 
 class BookDateScreen extends StatelessWidget {
   const BookDateScreen({super.key});
@@ -80,6 +82,9 @@ class BookDateScreen extends StatelessWidget {
           ),
 
           CustomButtonWithOnlyText(
+            onTap: (){
+              context.push(const BookingPersonalDetails());
+            },
               color: AppStyles.Primary, text: AppConstants.follow, textColor: Colors.white)
         ],
       ),

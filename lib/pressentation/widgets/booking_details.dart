@@ -80,20 +80,20 @@ class BookingDetails extends StatelessWidget {
               borderRadius: BorderRadius.circular(12.w),
               color: Colors.grey.shade100,
             ),
+            clipBehavior: Clip.none,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "${person.toInt().toString()}",
+                  person.toInt().toString(),
                   style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 12.sp,
                       fontFamily: AppConstants.fontFamily),
                 ),
-                Icon(Icons.keyboard_arrow_down)
+                const Icon(Icons.keyboard_arrow_down)
               ],
             ),
-            clipBehavior: Clip.none,
           ),
         ],
       ),
