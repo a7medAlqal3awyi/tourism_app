@@ -11,6 +11,7 @@ import 'package:tourism_app/utils/app_styles.dart';
 
 import '../../widgets/details_app_bar.dart';
 import '../../widgets/full_screen.dart';
+import '../book_date.dart';
 import '../rates_screen.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -263,6 +264,9 @@ class DetailsScreen extends StatelessWidget {
                     height: 20.h,
                   ),
                   CustomButtonWithOnlyText(
+                    onTap: (){
+                      context.push(BookDateScreen());
+                    },
                       color: AppStyles.Primary,
                       text: AppConstants.bookNow,
                       textColor: Colors.white),

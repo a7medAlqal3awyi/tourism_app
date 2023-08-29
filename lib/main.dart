@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tourism_app/pressentation/screens/home/home.dart';
-import 'package:tourism_app/pressentation/screens/on_boarding/splash_screen.dart';
-import 'package:tourism_app/pressentation/widgets/custom_tap_bar.dart';
-
+import 'package:tourism_app/pressentation/widgets/month_calender.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -31,10 +29,10 @@ class MyApp extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: const [
-          Locale('ar'), // Add the Arabic locale to the supported locales
-          Locale('en'), // Add other supported locales if needed
+          Locale('ar'),
+          Locale('en'),
         ],
-        home: HomeScreen(),
+        home:  HomeScreen(),
       ),
     );
   }
