@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tourism_app/core/helper.dart';
+import 'package:tourism_app/pressentation/screens/payment_screen.dart';
 import 'package:tourism_app/pressentation/widgets/booking_personal_details_widget.dart';
+import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
 import 'package:tourism_app/utils/app_constants.dart';
+import 'package:tourism_app/utils/app_styles.dart';
 
 class BookingPersonalDetails extends StatelessWidget {
   const BookingPersonalDetails({super.key});
@@ -24,14 +28,27 @@ class BookingPersonalDetails extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          BookingPersonalDetailsWidget(title: AppConstants.fullName, hint: AppConstants.enterFullName,
-          iconPath: 'assets/images/Profile.svg',),
-          BookingPersonalDetailsWidget(title: AppConstants.nickName, hint: AppConstants.enterNickName,
-          iconPath: ''),
-          BookingPersonalDetailsWidget(title: AppConstants.email, hint: AppConstants.enterYourEmail,
-          iconPath: 'assets/images/EmailIcon.svg',),
-          BookingPersonalDetailsWidget(title: AppConstants.yourBirthdate, hint: AppConstants.enterYourBirthdate,
-          iconPath: 'assets/images/Calendar.svg',),
+          BookingPersonalDetailsWidget(
+            title: AppConstants.fullName,
+            hint: AppConstants.enterFullName,
+            iconPath: 'assets/images/Profile.svg',
+          ),
+          BookingPersonalDetailsWidget(
+              title: AppConstants.nickName,
+            iconPath: '',
+              hint: AppConstants.enterNickName,
+
+              ),
+          BookingPersonalDetailsWidget(
+            title: AppConstants.email,
+            hint: AppConstants.enterYourEmail,
+            iconPath: 'assets/images/EmailIcon.svg',
+          ),
+          BookingPersonalDetailsWidget(
+            title: AppConstants.yourBirthdate,
+            hint: AppConstants.enterYourBirthdate,
+            iconPath: 'assets/images/Calendar.svg',
+          ),
           SizedBox(
             height: 10.h,
           ),
@@ -56,9 +73,10 @@ class BookingPersonalDetails extends StatelessWidget {
             child: Row(
               children: [
                 SvgPicture.asset('assets/images/Flag.svg'),
-                const Icon(Icons.keyboard_arrow_down,
-
-                color: Colors.grey,),
+                const Icon(
+                  Icons.keyboard_arrow_down,
+                  color: Colors.grey,
+                ),
                 Text(
                   AppConstants.enterYourPhone,
                   style: TextStyle(
@@ -70,8 +88,16 @@ class BookingPersonalDetails extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+          SizedBox(height: 150.h,),
+          CustomButtonWithOnlyText(
+            onTap: (){
+              context.push(const PaymentScreen());
+            },
+            color: AppStyles.Primary,
+            text: AppConstants.follow,
+            textColor: Colors.white,
           )
-
         ],
       ),
     );

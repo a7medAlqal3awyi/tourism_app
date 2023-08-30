@@ -42,7 +42,8 @@ class BookingDetails extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 5.w),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12.w),
-              color: Colors.grey.shade100,
+
+                color: Colors.grey.withOpacity(.1),
             ),
             clipBehavior: Clip.none,
             child: Row(
@@ -78,7 +79,7 @@ class BookingDetails extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 5.w),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12.w),
-              color: Colors.grey.shade100,
+                color: Colors.grey.withOpacity(.1),
             ),
             clipBehavior: Clip.none,
             child: Row(

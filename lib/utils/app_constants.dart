@@ -134,6 +134,20 @@ class AppConstants {
   static String bookingPersonalDetails =  "بيانات الحجز";
   static String enterNickName =  "أدخل لقبك";
   static String nickName =  "أدخل لقبك";
+  static String paymentMethod =  "طريقة الدفع";
+  static String payment =  "الدفع";
+  static String credit =  "كريدت كارد";
+  static String paypal =  "باي بال";
+  static String applePay =  "آبل باي";
+  static String addCredit =  "إضافة بطاقة جديدة";
+  static String cardName =  "Card Holder Name";
+  static String ahmedKaled =  "Ex: Ahmed Khaled";
+  static String cardNumber =  "Card Number";
+  static String cvv =  "CVV";
+  static String expirationDate =  "Expiration Date";
+  static String ex123 =  "Ex: 123";
+  static String exDate =  "Ex: 02/10";
+  static String expass =  "Ex:**** **** **** 3456";
 
 
 }
