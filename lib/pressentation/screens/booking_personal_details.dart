@@ -89,7 +89,7 @@ class BookingPersonalDetails extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 150.h,),
+          SizedBox(height: 180.h,),
           CustomButtonWithOnlyText(
             onTap: (){
               context.push(const PaymentScreen());

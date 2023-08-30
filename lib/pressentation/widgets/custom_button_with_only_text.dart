@@ -17,7 +17,6 @@ class CustomButtonWithOnlyText extends StatelessWidget {
     required this.textColor,
   });
 
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

@@ -8,7 +8,8 @@ class AppConstants {
 
   static String book = " حجز ";
   static String bookNow = "حجز الآن";
-  static String ticket = " التزاكر ";
+  static String tickets = " التزاكر ";
+  static String ticket = " التزكرة ";
   static String descriptionOnBoarding2 =
       " نتيح لك حجز تذاكر الطيران بكل يسر وسهولة. قم بتحديد وقت السفر والعودة، واحصل على أفضل العروض والأسعار المناسبة لك.";
 
@@ -59,6 +60,7 @@ class AppConstants {
   static String completeYourPersonalProfile  =" أكمل ملفك الشخصي ";
   static String choosePersonalImage  =" إختيار صورة شخصية ";
   static String fullName =" الاسم الكامل ";
+  static String name ="الاسم";
   static String enterFullName =" أدخل اسمك بالكامل ";
   static String enterYourEmail =" أدخل بريدك الالكتروني ";
   static String enterYourBirthdate =" أدخل تاريخ الميلادك ";
@@ -75,7 +77,9 @@ class AppConstants {
   static String antherOffers ="عروض أخرى";
   static String viewAll ="عرض الكل";
   static String fourSeason ="فندق الفورسيزون";
-  static String duration ="3 ستمبر - 6 ستمبر";
+  static String duration ="3 سبتمبر - 6 سبتمبر";
+  static String start ="3 سبتمبر";
+  static String end ="6 سبتمبر";
   static String peopleJoined ="إنضم 30 شخصا";
   static String reserveNow ="احجز الآن";
   static String planToYourJourney ="خطط لرجلتك القادمة الآن";
@@ -88,6 +92,7 @@ class AppConstants {
   static String alsa7el ="الساحل الشمالي";
   static String matro7 ="مرسي مطروح";
   static String night ="ليلة ";
+  static String twnyNight =" 20 ليلة";
   static String theOffers ="العروض";
   static String sharmElshekh ="شرم الشيخ";
   static String southSini ="جنوب سيناء";
@@ -148,6 +153,22 @@ class AppConstants {
   static String ex123 =  "Ex: 123";
   static String exDate =  "Ex: 02/10";
   static String expass =  "Ex:**** **** **** 3456";
+  static String verifyPayment =  "تأكيد الدفع";
+  static String total =  "الإجمالي";
+  static String additons =  "ضرائب و رسوم";
+  static String showTicket ="عرض التزكرة";
+  static String downloadTicket ="تحميل التزكرة";
+  static String paymentAndBookingSuccess ="تم الدفع و حجز الرحلة بنجاح";
+  static String bookStart ="بداية الحجز";
+  static String bookEnd ="نهاية الحجز";
+  static String hotel ="الفندق";
+  static String bookings ="الحجوزات";
+  static String current ="الحالية";
+  static String done ="المكتملة";
+  static String cancel ="الملغية";
+  static String cancelTrip ="إلغاء الرحلة";
+  static String payed ="مدفوع";
+
 
 
 }

@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/pressentation/widgets/double_text.dart';
 import 'package:tourism_app/pressentation/widgets/home_appbar.dart';
-import 'package:tourism_app/pressentation/widgets/suggestion_item.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 
 import '../../../data/model/offer_model.dart';
@@ -24,7 +23,7 @@ class HomeScreen extends StatelessWidget {
   final List<OffersModel> offers = [
     OffersModel(
         image:
-            'https://luxurytravelmom.com/wp-content/uploads/2017/04/four-seasons-orlando-review-luxury-hotel-luxury-travel-mom.jpg',
+            'https://luxurytravelmom.com/wp-content/uploads/2017/04/four-seasons-orlando-review-luxury-hotel-luxur-travel-mom.jpg',
         place: AppConstants.fourSeason,
         duration: AppConstants.duration,
         rate: 4.9,

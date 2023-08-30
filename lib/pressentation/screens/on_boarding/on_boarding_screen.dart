@@ -82,7 +82,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           ),
           children: <TextSpan>[
             TextSpan(
-              text: AppConstants.ticket,
+              text: AppConstants.tickets,
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.deepOrange,

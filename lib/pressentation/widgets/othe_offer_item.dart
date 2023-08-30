@@ -19,12 +19,16 @@ class OtherOffersItem extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.w),
       child: Card(
-        elevation: 0,
+        elevation: 1,
         color: Colors.white,
         child: Container(
-          color: Colors.white,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(18.w),
+          ),
           width: 343.w,
           height: 140.h,
+          padding: EdgeInsets.all(5.w),
           child: Row(
             children: [
               Stack(
