@@ -67,7 +67,7 @@ class RatesScreen extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                           fontSize: 12.sp,
                           fontFamily: AppConstants.fontFamily,
-                          color: AppStyles.Primary),
+                          color: AppStyles.primaryColor),
                     )
                   ],
                 ),
@@ -93,7 +93,7 @@ class RatesScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: CustomButtonWithOnlyText(
-                color: AppStyles.Primary,
+                color: AppStyles.primaryColor,
                 text: AppConstants.writeYrRates,
                 textColor: Colors.white),
           ),

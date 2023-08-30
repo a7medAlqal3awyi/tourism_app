@@ -28,8 +28,8 @@ class _HotelTabBarState extends State<HotelTabBar>
           height: 40.h,
           child: TabBar(
               isScrollable: true,
-              indicatorColor: AppStyles.Primary,
-              labelColor: AppStyles.Primary,
+              indicatorColor: AppStyles.primaryColor,
+              labelColor: AppStyles.primaryColor,
               unselectedLabelColor: const Color(0xffBDBDBD),
               labelStyle: TextStyle(
                   fontFamily: AppConstants.fontFamily,

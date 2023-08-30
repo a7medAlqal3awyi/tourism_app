@@ -106,7 +106,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                   child: Text(
                     '${date.day}',
                     style:  TextStyle(
-                        color: AppStyles.Primary,
+                        color: AppStyles.primaryColor,
                         fontSize: 16,
                         fontWeight: FontWeight.w500
 

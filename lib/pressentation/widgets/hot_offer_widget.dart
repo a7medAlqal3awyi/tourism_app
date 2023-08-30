@@ -18,7 +18,7 @@ class HotOffers extends StatelessWidget {
         clipBehavior: Clip.antiAliasWithSaveLayer,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12.w),
-            color: AppStyles.Primary),
+            color: AppStyles.primaryColor),
         child: Stack(
           children: [
             Padding(

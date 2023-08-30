@@ -76,7 +76,7 @@ Widget buildOnBoardingItem(
                 shape: const CircleBorder(),
                 child: Icon(
                   Icons.arrow_forward,
-                  color: AppStyles.Primary,
+                  color: AppStyles.primaryColor,
                 ),
               ),
             )

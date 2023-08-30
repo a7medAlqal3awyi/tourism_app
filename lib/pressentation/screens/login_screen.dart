@@ -98,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       context.pushAndRemove( HomeScreen());
                     }
                   },
-                  color: AppStyles.Primary,
+                  color: AppStyles.primaryColor,
                   text: AppConstants.signIn,
                   textColor: Colors.white,
                 ),
@@ -113,7 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     AppConstants.doYouForgetPassword,
                     style: TextStyle(
                       fontFamily: "Tajawal",
-                      color: AppStyles.Primary,
+                      color: AppStyles.primaryColor,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w700,
                     ),

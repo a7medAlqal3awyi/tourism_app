@@ -163,11 +163,15 @@ class AppConstants {
   static String bookEnd ="نهاية الحجز";
   static String hotel ="الفندق";
   static String bookings ="الحجوزات";
+  static String bookAgain ="حجز مرة أخرى";
+  static String bookingComplete ="تم إكتمال الحجز";
   static String current ="الحالية";
   static String done ="المكتملة";
   static String cancel ="الملغية";
   static String cancelTrip ="إلغاء الرحلة";
   static String payed ="مدفوع";
+  static String rebooking ="إعادة الحجز ";
+  static String bookingCanceled ="تم إلغاء الحجز";
 
 
 

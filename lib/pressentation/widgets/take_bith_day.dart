@@ -42,7 +42,7 @@ class _TakeBirthDayState extends State<TakeBirthDay> {
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.w),
               borderSide: BorderSide(
-                color: AppStyles.Primary,
+                color: AppStyles.primaryColor,
               ),
             ),
             hintStyle: TextStyle(

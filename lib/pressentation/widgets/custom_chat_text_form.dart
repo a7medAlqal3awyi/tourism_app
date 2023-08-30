@@ -20,7 +20,7 @@ class CustomTextChat extends StatelessWidget {
                   height: 40.h,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color:AppStyles.Primary,
+                    color:AppStyles.primaryColor,
 
                   ),
                   child: Padding(

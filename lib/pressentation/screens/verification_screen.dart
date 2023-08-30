@@ -84,7 +84,7 @@ class VerificationScreen extends StatelessWidget {
               onTap: () {
                 context.push(NewPassword());
               },
-              color: AppStyles.Primary,
+              color: AppStyles.primaryColor,
               text: AppConstants.follow,
               textColor: Colors.white,
             ),

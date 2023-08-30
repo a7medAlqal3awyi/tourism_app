@@ -116,7 +116,7 @@ class WatchedLaterItem extends StatelessWidget {
                         fontFamily: AppConstants.fontFamily,
                         fontWeight: FontWeight.w700,
                         fontSize: 12.sp,
-                        color: AppStyles.Primary),
+                        color: AppStyles.primaryColor),
                   ),
                   Text(
                     AppConstants.night,

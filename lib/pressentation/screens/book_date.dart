@@ -71,7 +71,7 @@ class BookDateScreen extends StatelessWidget {
                         fontFamily: AppConstants.fontFamily,
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w700,
-                        color: AppStyles.Primary),
+                        color: AppStyles.primaryColor),
                   ),
                 ],
               ),
@@ -85,7 +85,7 @@ class BookDateScreen extends StatelessWidget {
             onTap: (){
               context.push(const BookingPersonalDetails());
             },
-              color: AppStyles.Primary, text: AppConstants.follow, textColor: Colors.white)
+              color: AppStyles.primaryColor, text: AppConstants.follow, textColor: Colors.white)
         ],
       ),
     );

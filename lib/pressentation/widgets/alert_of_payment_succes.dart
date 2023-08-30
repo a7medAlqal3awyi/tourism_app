@@ -17,7 +17,7 @@ class AlertPaymentSuccess extends StatelessWidget {
         content: Text("Success payment"),
         actions: [
           CustomButtonWithOnlyText(
-              color: AppStyles.Primary,
+              color: AppStyles.primaryColor,
               text: AppConstants.showTicket,
               textColor: Colors.white,
           )

@@ -133,7 +133,7 @@ class DetailsScreen extends StatelessWidget {
                                   fontFamily: AppConstants.fontFamily,
                                   fontSize: 20.sp,
                                   fontWeight: FontWeight.w700,
-                                  color: AppStyles.Primary,
+                                  color: AppStyles.primaryColor,
                                 ),
                               ),
                               Text(
@@ -194,7 +194,7 @@ class DetailsScreen extends StatelessWidget {
                                     style: TextStyle(
                                         fontWeight: FontWeight.w500,
                                         fontSize: 16.sp,
-                                        color: AppStyles.Primary,
+                                        color: AppStyles.primaryColor,
                                         fontFamily: AppConstants.fontFamily),
                                   ),
                                 ),
@@ -267,7 +267,7 @@ class DetailsScreen extends StatelessWidget {
                     onTap: (){
                       context.push(BookDateScreen());
                     },
-                      color: AppStyles.Primary,
+                      color: AppStyles.primaryColor,
                       text: AppConstants.bookNow,
                       textColor: Colors.white),
                 ],

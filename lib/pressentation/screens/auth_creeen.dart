@@ -56,7 +56,7 @@ class AuthScreen extends StatelessWidget {
           ),
           CustomButton(
               textColor: Colors.white,
-              color: AppStyles.Primary,
+              color: AppStyles.primaryColor,
               text: AppConstants.completeWithGoogle,
               imagePath: "assets/images/Facebook.svg"),
           SizedBox(
@@ -73,7 +73,7 @@ class AuthScreen extends StatelessWidget {
               context.push(const LoginScreen());
             },
               textColor: Colors.white,
-              color: AppStyles.Primary,
+              color: AppStyles.primaryColor,
               text: AppConstants.signWithPassward,
               ),
           SizedBox(

@@ -48,7 +48,7 @@ class _CheckBoxWithRichTextState extends State<CheckBoxWithRichText> {
                     TextSpan(
                       text: AppConstants.ourConstrains,
                       style: TextStyle(
-                        color: AppStyles.Primary,
+                        color: AppStyles.primaryColor,
                         fontFamily: "Tajawal",
 
                         fontSize: 12.sp,

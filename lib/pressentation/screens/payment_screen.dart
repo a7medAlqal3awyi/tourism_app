@@ -62,7 +62,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   style: TextStyle(
                     fontFamily: AppConstants.fontFamily,
                     fontWeight: FontWeight.w700,
-                    color: AppStyles.Primary,
+                    color: AppStyles.primaryColor,
                     fontSize: 12.sp,
                   ),
                 ),
@@ -72,7 +72,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
               ),
               Spacer(),
               CustomButtonWithOnlyText(
-                  color: AppStyles.Primary,
+                  color: AppStyles.primaryColor,
                   text: AppConstants.follow,
                   textColor: Colors.white),
               SizedBox(

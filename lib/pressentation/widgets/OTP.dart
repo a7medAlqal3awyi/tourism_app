@@ -23,7 +23,7 @@ class OTPWidget extends StatelessWidget {
           defaultFieldBackgroundColor: Colors.grey.withOpacity(.08),
           filledFieldBackgroundColor: Colors.grey.withOpacity(.08),
           activeFieldBackgroundColor: Colors.white60,
-          activeFieldBorderColor: AppStyles.Primary,
+          activeFieldBorderColor: AppStyles.primaryColor,
           fieldPadding: 10,
 
           fieldBorderRadius: 12.w,

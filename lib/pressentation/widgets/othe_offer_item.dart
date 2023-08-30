@@ -146,7 +146,7 @@ class OtherOffersItem extends StatelessWidget {
                     width: 50.w,
                     height: 26.h,
                     decoration: BoxDecoration(
-                        color: AppStyles.Primary,
+                        color: AppStyles.primaryColor,
                         borderRadius: BorderRadius.circular(8.w)),
                     child: Center(
                       child: Text(

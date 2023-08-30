@@ -146,7 +146,7 @@ class Ticket extends StatelessWidget {
                   height: 110.h,
                 ),
                 CustomButtonWithOnlyText(
-                    color: AppStyles.Primary,
+                    color: AppStyles.primaryColor,
                     text: AppConstants.downloadTicket,
                     textColor: Colors.white)
               ],

@@ -90,7 +90,7 @@ class PaymentVerification extends StatelessWidget {
                               fontFamily: AppConstants.fontFamily,
                               fontWeight: FontWeight.w700,
                               fontSize: 12.sp,
-                              color: AppStyles.Primary),
+                              color: AppStyles.primaryColor),
                         ),
                       ],
                     ),
@@ -139,7 +139,7 @@ class PaymentVerification extends StatelessWidget {
               onTap: () {
                 const AlertPaymentSuccess();
               },
-              color: AppStyles.Primary,
+              color: AppStyles.primaryColor,
               text: AppConstants.verifyPayment,
               textColor: Colors.white)
         ],

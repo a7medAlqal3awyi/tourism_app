@@ -91,7 +91,7 @@ class RegisterScreen extends StatelessWidget {
                       context.push(const PersonalDetailsScreen());
                     }
                   },
-                  color: AppStyles.Primary,
+                  color: AppStyles.primaryColor,
                   text: AppConstants.createAccount,
                   textColor: Colors.white),
               ScreenDivider(dividerText: AppConstants.orCompleteUsing),

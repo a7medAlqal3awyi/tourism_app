@@ -41,7 +41,7 @@ class ShowDiaolog extends StatelessWidget {
                 Navigator.of(context).pop();
                 context.pushAndRemove( HomeScreen());
               },
-              color: AppStyles.Primary,
+              color: AppStyles.primaryColor,
               text: "استمر",
               textColor: Colors.white,
             ),

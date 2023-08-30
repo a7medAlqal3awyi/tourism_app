@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:tourism_app/pressentation/screens/add_new_credit.dart';
 import 'package:tourism_app/pressentation/screens/booking_screen.dart';
-import 'package:tourism_app/pressentation/screens/home/home.dart';
-import 'package:tourism_app/pressentation/screens/ticket.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +22,6 @@ class MyApp extends StatelessWidget {
         ),
         debugShowCheckedModeBanner: false,
         locale: const Locale('ar'),
-        // Set the locale to Arabic
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,

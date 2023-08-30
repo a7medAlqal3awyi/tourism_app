@@ -131,7 +131,7 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
               SizedBox(height:40.h,),
               Center(
                 child: CustomButtonWithOnlyText(
-                    color: AppStyles.Primary,
+                    color: AppStyles.primaryColor,
                     text: AppConstants.follow,
                     textColor: Colors.white),
               )

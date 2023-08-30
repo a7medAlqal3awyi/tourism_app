@@ -30,12 +30,12 @@ class CustomLinearProgress extends StatelessWidget {
             height: 11.h,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(4.h),
-                color: AppStyles.Primary),
+                color: AppStyles.primaryColor),
             child: LinearProgressIndicator(
               minHeight: 11,
               color: const Color(0xffF0F0F2),
               value: percentage,
-              backgroundColor: AppStyles.Primary,
+              backgroundColor: AppStyles.primaryColor,
             ),
           ),
         ),
@@ -44,7 +44,7 @@ class CustomLinearProgress extends StatelessWidget {
           style: TextStyle(
               fontFamily: AppConstants.fontFamily,
               fontSize: 12.sp,
-              color: AppStyles.Primary,
+              color: AppStyles.primaryColor,
               fontWeight: FontWeight.w700),
         ),
       ],

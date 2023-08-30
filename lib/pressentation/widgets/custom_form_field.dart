@@ -56,7 +56,7 @@ Widget CustomFormField({
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8.w),
                 borderSide: BorderSide(
-                  color: AppStyles.Primary,
+                  color: AppStyles.primaryColor,
                 )),
             hintStyle: TextStyle(
               fontFamily: 'Tajawal',

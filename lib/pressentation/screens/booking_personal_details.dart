@@ -94,7 +94,7 @@ class BookingPersonalDetails extends StatelessWidget {
             onTap: (){
               context.push(const PaymentScreen());
             },
-            color: AppStyles.Primary,
+            color: AppStyles.primaryColor,
             text: AppConstants.follow,
             textColor: Colors.white,
           )

@@ -77,7 +77,7 @@ class AddNewCreditScreen extends StatelessWidget {
             onTap: (){
               context.push(PaymentVerification());
             },
-              color: AppStyles.Primary,
+              color: AppStyles.primaryColor,
               text: AppConstants.follow,
               textColor: Colors.white)
         ],

@@ -33,7 +33,7 @@ class TextAndTextButton extends StatelessWidget {
                   fontFamily: "Tajawal",
                   fontWeight: FontWeight.w700,
                   fontSize: 12.sp,
-                  color: AppStyles.Primary),
+                  color: AppStyles.primaryColor),
             ))
       ],
     );
