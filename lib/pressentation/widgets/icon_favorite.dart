@@ -1,24 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:icon_broken/icon_broken.dart';
+import 'package:tourism_app/utils/app_styles.dart';
 
-class FavouriteIcon extends StatelessWidget {
-  const FavouriteIcon({super.key, this.onTap});
+class FavouriteIcon extends StatefulWidget {
 
-  final void Function()? onTap;
+   const FavouriteIcon({
+    super.key,
+  });
+
+  @override
+  State<FavouriteIcon> createState() => _FavouriteIconState();
+}
+
+class _FavouriteIconState extends State<FavouriteIcon> {
+  bool isPressed = false;
+
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        debugPrint("Favourite icon pressed");
-      },
-      child: Padding(
-        padding: EdgeInsets.only(right: 12.w, top: 10.h),
-        child: CircleAvatar(
-          radius: 15,
-          backgroundColor: const Color(0Xff1B1E28).withOpacity(.2),
-          child: SvgPicture.asset("assets/images/Heart.svg"),
+    return Padding(
+      padding:  EdgeInsets.only(right: 1.w),
+      child: IconButton(
+
+        color: Colors.grey,
+          style: ButtonStyle(
+            shape: const MaterialStatePropertyAll(
+              CircleBorder()
+            ),
+            backgroundColor: MaterialStateProperty.all(Colors.transparent.withOpacity(.2))
+          ),
+        onPressed: () {
+          setState(() {
+            isPressed = !isPressed;
+          });
+        },
+        icon: Icon(
+          IconBroken.Heart,
+          color: isPressed ? AppStyles.favColor : Colors.white,
         ),
       ),
     );

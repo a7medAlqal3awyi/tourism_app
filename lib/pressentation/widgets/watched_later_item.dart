@@ -12,16 +12,17 @@ class WatchedLaterItem extends StatelessWidget {
 
   final WatchedLaterModel model;
 
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 15.w),
+      padding: EdgeInsets.symmetric(horizontal: 15.w,vertical: 2.h),
       child: Card(
-        margin: EdgeInsets.symmetric(vertical: 10.h),
         color: Colors.white,
         child: Padding(
           padding: EdgeInsets.only(
-            right: 10.w,
+            top: 10.h,
+            right: 7.w
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,7 +42,9 @@ class WatchedLaterItem extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const FavouriteIcon(),
+                   FavouriteIcon(
+
+                  ),
                 ],
               ),
               SizedBox(
@@ -77,31 +80,19 @@ class WatchedLaterItem extends StatelessWidget {
               SizedBox(
                 height: 5.w,
               ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.start,
+              Wrap(
                 children: [
-                  const Icon(
-                    Icons.star,
-                    size: 20,
-                    color: Color(0xffFFD336),
-                  ),
-                  const Icon(
-                    Icons.star,
-                    size: 20,
-                    color: Color(0xffFFD336),
-                  ),
-                  const Icon(
-                    Icons.star,
-                    size: 20,
-                    color: Color(0xffFFD336),
-                  ),
+                  SvgPicture.asset('assets/images/Star.svg'),
+                  SvgPicture.asset('assets/images/Star.svg'),
+                  SvgPicture.asset('assets/images/Star.svg'),
+                  SvgPicture.asset('assets/images/Star.svg'),
                   Text(
-                    "${model.rate.toInt()}",
+                    "${model.rate}",
                     style: TextStyle(
                         fontWeight: FontWeight.w700,
+                        color: Colors.black,
                         fontFamily: AppConstants.fontFamily,
-                        fontSize: 12.sp),
+                        fontSize: 14.sp),
                   )
                 ],
               ),
@@ -111,7 +102,7 @@ class WatchedLaterItem extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    " ج/ ${model.price} ",
+                    "  ${model.price.toInt()} ج/ ",
                     style: TextStyle(
                         fontFamily: AppConstants.fontFamily,
                         fontWeight: FontWeight.w700,

@@ -16,6 +16,7 @@ dependencies:
   flutter_timer_countdown: ^1.0.5
   full_screen_image_null_safe: ^2.0.0
   table_calendar: ^3.0.9
+  icon_broken: ^1.1.0
 
 
 

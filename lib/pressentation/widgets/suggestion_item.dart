@@ -9,8 +9,7 @@ import '../screens/home/details_screen.dart';
 import 'icon_favorite.dart';
 
 class SuggestionItem extends StatelessWidget {
-  SuggestionItem({super.key
-    ,required this.model});
+  SuggestionItem({super.key, required this.model});
 
   SuggestionModel model;
 
@@ -35,7 +34,7 @@ class SuggestionItem extends StatelessWidget {
                       height: 286.h,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20.w),
-                        image:  DecorationImage(
+                        image: DecorationImage(
                           fit: BoxFit.cover,
                           image: NetworkImage(
                             model.image,
@@ -43,9 +42,7 @@ class SuggestionItem extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const FavouriteIcon(
-
-                    )
+                    FavouriteIcon()
                   ],
                 ),
                 SizedBox(
@@ -68,7 +65,7 @@ class SuggestionItem extends StatelessWidget {
                       color: Color(0xffFFD336),
                     ),
                     Text(
-                      "${model.rate}" ,
+                      "${model.rate}",
                       style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 14.sp,

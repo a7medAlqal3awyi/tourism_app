@@ -171,8 +171,11 @@ class AppConstants {
   static String cancelTrip ="إلغاء الرحلة";
   static String payed ="مدفوع";
   static String rebooking ="إعادة الحجز ";
+  static String favorites ="المفضلة ";
   static String bookingCanceled ="تم إلغاء الحجز";
+  static String doYouWantToCancelBooking ="هل تريد بالفعل إلغاء الحجز ؟";
 
+  static String yesFollow ="نعم, متابعة ";
 
 
 }

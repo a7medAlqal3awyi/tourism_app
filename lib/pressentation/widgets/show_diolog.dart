@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/core/helper.dart';
+import 'package:tourism_app/pressentation/widgets/blur_alert.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 import 'package:tourism_app/utils/app_styles.dart';
@@ -8,7 +9,7 @@ import 'package:tourism_app/utils/app_styles.dart';
 import '../screens/home/home.dart';
 
 class ShowDiaolog extends StatelessWidget {
-  const ShowDiaolog({super.key});
+  const ShowDiaolog({super.key, required BuildContext context, required BlurryDialog Function(dynamic context) builder});
 
   @override
   Widget build(BuildContext context) {

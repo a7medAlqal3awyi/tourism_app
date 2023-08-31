@@ -89,7 +89,7 @@ class NewPassword extends StatelessWidget {
               const Spacer(),
               CustomButtonWithOnlyText(
                   onTap: () {
-                    context.push(const ShowDiaolog());
+                    // context.push(const ShowDiaolog());
                   },
                   color: const Color(0xffba7b0be),
                   text: AppConstants.follow,

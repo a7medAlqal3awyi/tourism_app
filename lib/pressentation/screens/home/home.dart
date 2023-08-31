@@ -149,7 +149,7 @@ class HomeScreen extends StatelessWidget {
                   context.push(const WatchedLaterScreen());
                 },
                 firstText: AppConstants.watchedLater,
-                secondText: AppConstants.viewAll),
+                secondText: AppConstants.viewAll,),
           ),
           GridView.builder(
             shrinkWrap: true,

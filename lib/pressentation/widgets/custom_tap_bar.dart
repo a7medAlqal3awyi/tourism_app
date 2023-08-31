@@ -96,7 +96,8 @@ class _CustomTapBarState extends State<CustomTapBar>
                 SizedBox(
                   height: 397.h,
                   child: ListView.builder(
-                    itemBuilder: (context, index) => GestureDetector(
+                    itemBuilder: (context, index) =>
+                        GestureDetector(
                       onTap: (){
                         context.push( DetailsScreen(
                           suggestionModel: suggestions[index],

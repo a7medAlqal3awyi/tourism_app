@@ -45,7 +45,8 @@ class OtherOffersItem extends StatelessWidget {
                         ),
                       )
                   ),
-                  const FavouriteIcon()
+                   FavouriteIcon(
+                   )
                 ],
               ),
               SizedBox(
