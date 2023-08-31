@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tourism_app/pressentation/screens/booking_screen.dart';
 import 'package:tourism_app/pressentation/screens/favourite_screen.dart';
+import 'package:tourism_app/pressentation/screens/profile_screen.dart';
+import 'package:tourism_app/pressentation/widgets/vedio_player_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
           Locale('ar'),
           Locale('en'),
         ],
-        home:   FavoriteScreen(),
+        home:   ProfileScreen(),
       ),
     );
   }
