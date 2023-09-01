@@ -17,7 +17,8 @@ class _VideoAppState extends State<VideoApp> {
   void initState() {
     _controller = VideoPlayerController.networkUrl(
       Uri.parse(
-          'https://vod-progressive.akamaized.net/exp=1693529900~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F1952%2F15%2F384761655%2F1618226594.mp4~hmac=0829badeadd8f39e2136941d1662d29363aeb1be57e1bfc8042cb701cb29068b/vimeo-prod-skyfire-std-us/01/1952/15/384761655/1618226594.mp4'),
+        'https://vod-progressive.akamaized.net/exp=1693594578~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F788%2F13%2F328940133%2F1290021545.mp4~hmac=ce8ee797e8d723987ace021b6bf1cd54a75313a92776d9416cb5af3167d624f3/vimeo-prod-skyfire-std-us/01/788/13/328940133/1290021545.mp4?filename=file.mp4'
+      ),
     );
     _initVideoPlayer = _controller.initialize().then((_) {
       setState(() {});
@@ -40,8 +41,9 @@ class _VideoAppState extends State<VideoApp> {
         builder: (context, snapShot) {
           if (snapShot.connectionState == ConnectionState.done) {
             return AspectRatio(
-              aspectRatio: _controller.value.aspectRatio.h/.75,
+              aspectRatio: _controller.value.aspectRatio.h/.8,
               child: Container(
+                height:150.h ,
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                   decoration: BoxDecoration(
                     shape: BoxShape.rectangle,

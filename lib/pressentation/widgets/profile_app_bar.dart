@@ -6,8 +6,8 @@ import 'package:tourism_app/utils/app_constants.dart';
 import 'custom_icon.dart';
 
 class ProfileAppBar extends StatelessWidget {
-  const ProfileAppBar({super.key});
-
+  const ProfileAppBar({super.key, this.onTap});
+ final void Function()? onTap ;
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -19,9 +19,7 @@ class ProfileAppBar extends StatelessWidget {
         child: Row(
           children: [
             CustomIcon(
-              onTap: () {
-                context.pop(context);
-              },
+              onTap: onTap,
               iconWidget: const Icon(
                 Icons.arrow_back_outlined,
                 color: Colors.white,

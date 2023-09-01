@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
   final List<OffersModel> offers = [
     OffersModel(
         image:
-            'https://luxurytravelmom.com/wp-content/uploads/2017/04/four-seasons-orlando-review-luxury-hotel-luxur-travel-mom.jpg',
+            'https://th.bing.com/th/id/OIP.IAfW3Uyo9LUn0Zx7qu-rfgHaE6?pid=ImgDet&rs=1',
         place: AppConstants.fourSeason,
         duration: AppConstants.duration,
         rate: 4.9,
@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
     OffersModel(
         image:
             'https://luxurytravelmom.com/wp-content/uploads/2017/04/four-seasons-orlando-review-luxury-hotel-luxury-travel-mom.jpg',
-        place: AppConstants.fourSeason,
+        place: AppConstants.helton,
         duration: AppConstants.duration,
         rate: 4.9,
         price: 5200),

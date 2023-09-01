@@ -42,6 +42,8 @@ class AppConstants {
   static String myEmail = "a7medalqalawyi@gmail.com";
   static String or ="او";
   static String follow ="متابعة";
+  static String conferm ="تأكيد";
+  static String contactWithUs ="تواصل معنا";
   static String verifyPhoneNumber ="تأكيد رقم الهاتف";
   static String weSendVerificationNumber ="لقد قمنا بارسال رمز التأكيد الى الرقم";
   static String resend =" إعادة ارسال";
@@ -60,6 +62,7 @@ class AppConstants {
   static String completeYourPersonalProfile  =" أكمل ملفك الشخصي ";
   static String choosePersonalImage  =" إختيار صورة شخصية ";
   static String fullName =" الاسم الكامل ";
+  static String fullAhmedName ="أحمد خالد حامد القلعاوي";
   static String name ="الاسم";
   static String enterFullName =" أدخل اسمك بالكامل ";
   static String enterYourEmail =" أدخل بريدك الالكتروني ";
@@ -77,6 +80,7 @@ class AppConstants {
   static String antherOffers ="عروض أخرى";
   static String viewAll ="عرض الكل";
   static String fourSeason ="فندق الفورسيزون";
+  static String helton ="فندق هيلتون";
   static String duration ="3 سبتمبر - 6 سبتمبر";
   static String start ="3 سبتمبر";
   static String end ="6 سبتمبر";
@@ -186,6 +190,17 @@ class AppConstants {
   static String ahmedEmail ="ahmedAlqalawyi@gamil.com";
   static String home ="الرئيسية";
   static String myProfile ="حسابي";
+  static String myBirth ="31/5/2002";
+  static String editMyProfile ="تعديل الملف الشخصي";
+  static String changeYourProfilePic ="تغيير صورتك الشخصية";
+  static String futureCompany ="شركة المستقبل";
+  static String activeNow ="نشط الآن";
+  static String hello ="Hello!";
+  static String today ="اليوم!";
+  static String iamGlab ="I’m very glab you like it👍";
+  static String IamAtHome ="I will be at home";
+  static String weWillArrive ="We are arriving today at 01:45, will someone be at home?";
+  static String thank ="Thank you very mouch for your traveling, we really like the apartments. we will stay here for anather 5 days...!";
 
 
 }

@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tourism_app/core/helper.dart';
+import 'package:tourism_app/pressentation/screens/booking_screen.dart';
+import 'package:tourism_app/pressentation/screens/edit_profile.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 import '../widgets/profile_app_bar.dart';
 import '../widgets/row_of_profile.dart';
+import '../widgets/vedio_player_widget.dart';
+import 'ContactUsScreen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -17,13 +22,8 @@ class ProfileScreen extends StatelessWidget {
         Stack(
           clipBehavior: Clip.none,
           children: [
-            // VideoApp(),
-            Container(
-              clipBehavior: Clip.none,
-              color: Colors.cyan,
-              width: 375,
-              height: 150,
-            ),
+            const VideoApp(),
+
             const ProfileAppBar(),
             Positioned(
               top: 110.h,
@@ -40,7 +40,7 @@ class ProfileScreen extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 40.h,
+          height: 20.h,
         ),
         Text(
           AppConstants.ahmedAlqal3awyi,
@@ -58,17 +58,34 @@ class ProfileScreen extends StatelessWidget {
               color: const Color(0xff7D848D)),
         ),
         SizedBox(
-          height: 40.h,
+          height: 20.h,
         ),
         RowOfProfile(
+          onTap: (){
+            context.push(const EditProfileScreen());
+          },
           text: AppConstants.editAccount,
           iconPath: 'assets/images/Profile.svg',
         ),
         RowOfProfile(
+          onTap: (){
+            context.push(const BookingScreen());
+          },
           text: AppConstants.previousTrips,
           iconPath: 'assets/images/Plane.svg',
         ),
         RowOfProfile(
+         onTap: (){
+           context.push(const ContactUsScreen());
+
+         },
+          text: AppConstants.connectUs,
+          iconPath: 'assets/images/Privacy.svg',
+        ),
+        RowOfProfile(
+          onTap: (){
+            context.push(const EditProfileScreen());
+          },
           text: AppConstants.privacyPolicy,
           iconPath: 'assets/images/EmailIcon.svg',
         ),
@@ -76,7 +93,7 @@ class ProfileScreen extends StatelessWidget {
           text: AppConstants.settings,
           iconPath: 'assets/images/Setting.svg',
         ),
-        SizedBox(height: 40.h,),
+        SizedBox(height: 20.h,),
         CustomButton(
           imagePath: 'assets/images/Logout.svg',
             color: Colors.transparent, text: AppConstants.signOut, textColor: AppStyles.redColor)

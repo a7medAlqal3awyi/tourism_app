@@ -33,123 +33,113 @@ class Ticket extends StatelessWidget {
         body: Center(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.w),
-            child: Column(
-              children: [
-                SizedBox(
-                  width: 240.w,
-                  height: 194.h,
-                  child: Column(
+            child: SizedBox(
+              width: 348.w,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 190.h,
+                  ),
+                  Text(
+                    maxLines: 1,
+                    AppConstants.paymentAndBookingSuccess,
+                    style: TextStyle(
+                      fontFamily: AppConstants.fontFamily,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 17.sp,
+                    ),
+                  ),
+                  SizedBox(height: 20.h,),
 
-                    children: [
-                      Container(
-                        width: 150.w,
-                        height: 150.w,
-                        color: Colors.blue,
-                        child: Text("Done animation"),
-                      ),
-                      SizedBox(
-                        height: 10.h,
-                      ),
-                      Text(
-                        maxLines: 1,
-                        AppConstants.paymentAndBookingSuccess,
-                        style: TextStyle(
-                          fontFamily: AppConstants.fontFamily,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 17.sp,
+                  Container(
+                    width: 348.w,
+                    height: 319.h,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12.w),
+                        color: const Color(0xff0D6EFD)),
+                    child: Stack(
+                      children: [
+                        Column(
+                          children: [
+                            SizedBox(
+                              height: 10.h,
+                            ),
+                            SizedBox(
+                              width: 117.w,
+                              height: 117.h,
+                              child: Image.asset('assets/images/Qrcode.png'),
+                            ),
+                            SizedBox(
+                              height: 15.h,
+                            ),
+                            TicketRow(
+                              txt1: AppConstants.name,
+                              txt2: AppConstants.yourPhone,
+                            ),
+                            TicketRow(
+                              txt1: AppConstants.ahmedAlqal3awyi,
+                              txt2: AppConstants.number,
+                            ),
+                            SizedBox(
+                              height: 20.h,
+                            ),
+                            TicketRow(
+                              txt1: AppConstants.bookStart,
+                              txt2: AppConstants.bookEnd,
+                            ),
+                            TicketRow(
+                              txt1: AppConstants.startDate,
+                              txt2: AppConstants.endDate,
+                            ),
+                            SizedBox(
+                              height: 20.h,
+                            ),
+                            TicketRow(
+                              txt1: AppConstants.hotel,
+                              txt2: AppConstants.adultNum,
+                            ),
+                            TicketRow(
+                              txt1: AppConstants.azkaSafaHotel,
+                              txt2: "5",
+                            ),
+                          ],
                         ),
-                      ),
-                    ],
+                        Positioned(
+                          top: 170,
+                          left: -20,
+                          child: Container(
+                            width: 50.w,
+                            height: 50.h,
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 170,
+                          right: -20,
+                          child: Container(
+                            width: 50.w,
+                            height: 50.h,
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                ),
-                Container(
-                  width: 348.w,
-                  height: 319.h,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12.w),
-                      color: const Color(0xff0D6EFD)),
-                  child: Stack(
-                    children: [
-                      Column(
-                        children: [
-                          SizedBox(
-                            height: 10.h,
-                          ),
-                          SizedBox(
-                            width: 117.w,
-                            height: 117.h,
-                            child: Image.asset('assets/images/Qrcode.png'),
-                          ),
-                          SizedBox(
-                            height: 15.h,
-                          ),
-                          TicketRow(
-                            txt1: AppConstants.name,
-                            txt2: AppConstants.yourPhone,
-                          ),
-                          TicketRow(
-                            txt1: AppConstants.ahmedAlqal3awyi,
-                            txt2: AppConstants.number,
-                          ),
-                          SizedBox(
-                            height: 20.h,
-                          ),
-                          TicketRow(
-                            txt1: AppConstants.bookStart,
-                            txt2: AppConstants.bookEnd,
-                          ),
-                          TicketRow(
-                            txt1: AppConstants.startDate,
-                            txt2: AppConstants.endDate,
-                          ),
-                          SizedBox(
-                            height: 20.h,
-                          ),
-                          TicketRow(
-                            txt1: AppConstants.hotel,
-                            txt2: AppConstants.adultNum,
-                          ),
-                          TicketRow(
-                            txt1: AppConstants.azkaSafaHotel,
-                            txt2: "5",
-                          ),
-                        ],
-                      ),
-                      Positioned(
-                        top: 170,
-                        left: -20,
-                        child: Container(
-                          width: 50.w,
-                          height: 50.h,
-                          decoration: const BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        top: 170,
-                        right: -20,
-                        child: Container(
-                          width: 50.w,
-                          height: 50.h,
-                          decoration: const BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                      )
-                    ],
+                  SizedBox(
+                    height: 90.h,
                   ),
-                ),
-                SizedBox(
-                  height: 110.h,
-                ),
-                CustomButtonWithOnlyText(
-                    color: AppStyles.primaryColor,
-                    text: AppConstants.downloadTicket,
-                    textColor: Colors.white)
-              ],
+                  CustomButtonWithOnlyText(
+                      color: AppStyles.primaryColor,
+                      text: AppConstants.downloadTicket,
+                      textColor: Colors.white)
+                ],
+              ),
             ),
           ),
         ));
