@@ -176,6 +176,16 @@ class AppConstants {
   static String doYouWantToCancelBooking ="هل تريد بالفعل إلغاء الحجز ؟";
 
   static String yesFollow ="نعم, متابعة ";
+  static String myAccount ="حسابي ";
+  static String editAccount ="تعديل الملف الشخصي ";
+  static String previousTrips ="الرحلات السابقة ";
+  static String connectUs ="تواصل معنا ";
+  static String privacyPolicy ="سياسة الخصوصية ";
+  static String settings ="الإعدادات ";
+  static String signOut ="تسجيل الخروج ";
+  static String ahmedEmail ="ahmedAlqalawyi@gamil.com";
+  static String home ="الرئيسية";
+  static String myProfile ="حسابي";
 
 
 }
