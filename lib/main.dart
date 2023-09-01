@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:tourism_app/pressentation/screens/ContactUsScreen.dart';
 import 'package:tourism_app/pressentation/screens/booking_screen.dart';
 import 'package:tourism_app/pressentation/screens/dashboard_screen.dart';
 import 'package:tourism_app/pressentation/screens/edit_profile.dart';
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
           Locale('ar'),
           Locale('en'),
         ],
-        home:   const DashboardScreen(),
+        home:   const ContactUsScreen(),
       ),
     );
   }

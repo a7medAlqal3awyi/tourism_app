@@ -194,11 +194,13 @@ class AppConstants {
   static String editMyProfile ="تعديل الملف الشخصي";
   static String changeYourProfilePic ="تغيير صورتك الشخصية";
   static String futureCompany ="شركة المستقبل";
+  static String writeYourMessageNew ="أكتب رسالتك الآن";
   static String activeNow ="نشط الآن";
   static String hello ="Hello!";
-  static String today ="اليوم!";
+  static String today ="اليوم";
   static String iamGlab ="I’m very glab you like it👍";
   static String IamAtHome ="I will be at home";
+  static String time ="  9:34";
   static String weWillArrive ="We are arriving today at 01:45, will someone be at home?";
   static String thank ="Thank you very mouch for your traveling, we really like the apartments. we will stay here for anather 5 days...!";
 
