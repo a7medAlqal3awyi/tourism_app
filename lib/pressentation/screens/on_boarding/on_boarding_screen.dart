@@ -20,6 +20,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   var boardingController = PageController();
   List<OnBoardingModel> boarding = [
     OnBoardingModel(
+      value:1/3,
       image: 'assets/images/onBoarding1.png',
       avatarWidget: Padding(
         padding: EdgeInsets.only(left: 35.w),
@@ -61,6 +62,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       description: AppConstants.descriptionOnBoarding1,
     ),
     OnBoardingModel(
+      value: 2/3,
       image: 'assets/images/onBoarding2.png',
       avatarWidget: Padding(
         padding: EdgeInsets.only(right: 50.w),
@@ -95,6 +97,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       description: AppConstants.descriptionOnBoarding2,
     ),
     OnBoardingModel(
+      value: 1,
       image: 'assets/images/onBoarding3.png',
       avatarWidget: Padding(
         padding: EdgeInsets.only(right: 150.w),
@@ -190,11 +193,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   });
                 }
               },
-              itemBuilder: (context, index) => buildOnBoardingItem(
-                context,
-                boarding[index],
-                isLast,
-                boardingController,
+              itemBuilder: (context, index) => BuildOnBoardingItem(
+                model:boarding[index],
+                boardingController: boardingController,
+                isLast: isLast,
+                progressValue: boarding[index].value,
               ),
               itemCount: boarding.length,
             ),
@@ -202,3 +205,4 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         ]));
   }
 }
+

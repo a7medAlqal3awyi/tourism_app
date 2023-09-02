@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/core/helper.dart';
-import 'package:tourism_app/data/model/on_boarding_model.dart';
-import 'package:tourism_app/pressentation/screens/auth_creeen.dart';
-import 'package:tourism_app/utils/app_styles.dart';
 
-Widget buildOnBoardingItem(
-  BuildContext context,
-  OnBoardingModel model,
-  bool isLast,
-  PageController boardingController,
-) =>
-    Column(
+import '../../data/model/on_boarding_model.dart';
+import '../../utils/app_styles.dart';
+import '../screens/auth_creeen.dart';
+
+class BuildOnBoardingItem extends StatelessWidget {
+  const BuildOnBoardingItem({super.key, required this.model, required this.isLast, required this.boardingController, required this.progressValue});
+
+  final OnBoardingModel model;
+  final double progressValue;
+  final PageController boardingController;
+
+  final bool isLast;
+  @override
+  Widget build(BuildContext context) {
+    return  Column(
       children: [
         SizedBox(
           height: 15.h,
@@ -55,6 +60,36 @@ Widget buildOnBoardingItem(
                 ),
               ),
             ),
+            // Positioned(
+            //   bottom:90 ,
+            //   left: MediaQuery.of(context).size.width/2.5,
+            //   child: SmoothPageIndicator(
+            //     effect: SlideEffect(
+            //       activeDotColor: AppStyles.favColor,
+            //       dotWidth: 22,
+            //       dotHeight:3.h,
+            //       spacing: 0,
+            //
+            //         type: SlideType.normal,
+            //       radius: 5,
+            //       dotColor: Colors.white
+            //     ),
+            //     axisDirection: Axis.horizontal,
+            //       controller: boardingController, count: 3),
+            // ),
+            Positioned(
+              bottom: 90,
+              left: MediaQuery.of(context).size.width / 2.5,
+              child: SizedBox(
+                width: 70.w,
+                child: LinearProgressIndicator(
+                  color: AppStyles.favColor,
+                  backgroundColor: Colors.white,
+                  value: progressValue,
+                ),
+              ),
+            ),
+
             Container(
               alignment: Alignment.bottomCenter,
               padding: EdgeInsets.only(top: 420.h),
@@ -84,3 +119,5 @@ Widget buildOnBoardingItem(
         ),
       ],
     );
+  }
+}
