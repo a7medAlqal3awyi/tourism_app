@@ -205,5 +205,11 @@ class AppConstants {
   static String weWillArrive ="We are arriving today at 01:45, will someone be at home?";
   static String thank ="Thank you very mouch for your traveling, we really like the apartments. we will stay here for anather 5 days...!";
 
+  static String language =" اللغة";
+  static String changePassword =" تغيير كلمة المرور";
+  static String aboutCompany =" عن الشركة";
+  static String deleteAcc ="حذف الحساب";
+  static String english ="الإنجليزية";
+  static String arabic ="العربية";
 
 }

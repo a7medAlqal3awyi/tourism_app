@@ -41,7 +41,7 @@ class ContactUsScreen extends StatelessWidget {
         actions: [
           GestureDetector(
             onTap: ()
-            {context.push(CallScreen());
+            {context.push(const CallScreen());
               },
               child: SvgPicture.asset('assets/images/Phone.svg')),
           SizedBox(

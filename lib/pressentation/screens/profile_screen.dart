@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/pressentation/screens/booking_screen.dart';
 import 'package:tourism_app/pressentation/screens/edit_profile.dart';
+import 'package:tourism_app/pressentation/screens/setting_screen.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 import 'package:tourism_app/utils/app_styles.dart';
@@ -90,6 +91,8 @@ class ProfileScreen extends StatelessWidget {
           iconPath: 'assets/images/EmailIcon.svg',
         ),
         RowOfProfile(
+          onTap: (){
+            context.push(const SettingScreen());          },
           text: AppConstants.settings,
           iconPath: 'assets/images/Setting.svg',
         ),

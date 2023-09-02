@@ -8,6 +8,7 @@ import 'package:tourism_app/pressentation/screens/edit_profile.dart';
 import 'package:tourism_app/pressentation/screens/favourite_screen.dart';
 import 'package:tourism_app/pressentation/screens/home/home.dart';
 import 'package:tourism_app/pressentation/screens/profile_screen.dart';
+import 'package:tourism_app/pressentation/screens/setting_screen.dart';
 import 'package:tourism_app/pressentation/screens/ticket.dart';
 import 'package:tourism_app/pressentation/widgets/vedio_player_widget.dart';
 
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
           Locale('ar'),
           Locale('en'),
         ],
-        home:   const ContactUsScreen(),
+        home:   const SettingScreen(),
       ),
     );
   }
