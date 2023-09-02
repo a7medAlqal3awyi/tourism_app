@@ -200,6 +200,7 @@ class AppConstants {
   static String today ="اليوم";
   static String iamGlab ="I’m very glab you like it👍";
   static String IamAtHome ="I will be at home";
+  static String endCall ="إنهاء المكالمة";
   static String time ="  9:34";
   static String weWillArrive ="We are arriving today at 01:45, will someone be at home?";
   static String thank ="Thank you very mouch for your traveling, we really like the apartments. we will stay here for anather 5 days...!";

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
 import '../widgets/chat_bubble.dart';
 import '../widgets/send_message_to_company.dart';
+import 'call_screen.dart';
 
 class ContactUsScreen extends StatelessWidget {
   const ContactUsScreen({super.key});
@@ -14,6 +16,7 @@ class ContactUsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
         centerTitle: true,
         title: Column(
           children: [
@@ -36,7 +39,11 @@ class ContactUsScreen extends StatelessWidget {
           ],
         ),
         actions: [
-          SvgPicture.asset('assets/images/Phone.svg'),
+          GestureDetector(
+            onTap: ()
+            {context.push(CallScreen());
+              },
+              child: SvgPicture.asset('assets/images/Phone.svg')),
           SizedBox(
             width: 20.w,
           ),
