@@ -74,7 +74,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 CustomFormField(
                   isPassword: true,
-                  ///ToDo
                   // suffixPressed: ,
                   type: TextInputType.visiblePassword,
                   controller: passwordController,

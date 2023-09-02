@@ -7,6 +7,7 @@ import 'package:tourism_app/utils/app_constants.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
 import 'change_language_screen.dart';
+import 'change_password_screen.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
@@ -33,6 +34,9 @@ class SettingScreen extends StatelessWidget {
             },
               text: AppConstants.language, iconPath: 'assets/images/World.svg'),
           RowOfProfile(
+            onTap:(){
+              context.push(const ChangePasswordScreen());
+            } ,
               text: AppConstants.changePassword,
               iconPath: 'assets/images/LockIcon.svg'),
           RowOfProfile(
