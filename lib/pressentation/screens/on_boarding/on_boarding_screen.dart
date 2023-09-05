@@ -37,7 +37,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           style: TextStyle(
             fontSize: 24.sp,
             color: Colors.black,
-            fontFamily: 'Tajawal',
+            fontFamily: AppConstants.fontFamily,
             fontWeight: FontWeight.w700,
           ),
           children: <TextSpan>[
@@ -46,7 +46,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.deepOrange,
-                  fontFamily: 'Tajawal',
+                  fontFamily: AppConstants.fontFamily,
                   fontSize: 24.sp),
             ),
             TextSpan(
@@ -54,7 +54,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 style: TextStyle(
                   fontSize: 24.sp,
                   color: Colors.black,
-                  fontFamily: 'Tajawal',
+                  fontFamily: AppConstants.fontFamily,
                 )),
           ],
         ),
@@ -79,7 +79,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           style: TextStyle(
             fontSize: 24.sp,
             color: Colors.black,
-            fontFamily: 'Tajawal',
+            fontFamily: AppConstants.fontFamily,
             fontWeight: FontWeight.w700,
           ),
           children: <TextSpan>[
@@ -88,7 +88,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.deepOrange,
-                  fontFamily: 'Tajawal',
+                  fontFamily: AppConstants.fontFamily,
                   fontSize: 24.sp),
             ),
           ],
@@ -114,7 +114,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           style: TextStyle(
             fontSize: 24.sp,
             color: Colors.black,
-            fontFamily: 'Tajawal',
+            fontFamily: AppConstants.fontFamily,
             fontWeight: FontWeight.w700,
           ),
           children: <TextSpan>[
@@ -123,7 +123,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
-                  fontFamily: 'Tajawal',
+                  fontFamily: AppConstants.fontFamily,
                   fontSize: 24.sp),
             ),
             TextSpan(
@@ -131,7 +131,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.deepOrange,
-                  fontFamily: 'Tajawal',
+                  fontFamily: AppConstants.fontFamily,
                   fontSize: 24.sp),
             ),
           ],
@@ -171,7 +171,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 12.sp,
-                      fontFamily: 'Tajawal',
+                      fontFamily: AppConstants.fontFamily,
                       fontWeight: FontWeight.w700),
                 ),
               ),

@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:tourism_app/core/helper.dart';
+import 'package:tourism_app/pressentation/screens/dashboard_screen.dart';
+import 'package:tourism_app/pressentation/widgets/alert_of_payment_succes.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
 import '../../utils/app_constants.dart';
 import '../widgets/ticket_row.dart';
 
-class Ticket extends StatelessWidget {
-  const Ticket({super.key});
+class TicketScreen extends StatelessWidget {
+  const TicketScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,14 +42,14 @@ class Ticket extends StatelessWidget {
                 children: [
                   SizedBox(
                     height: 190.h,
+                    child: Image.asset('assets/images/done.gif'),
                   ),
                   Text(
-                    maxLines: 1,
                     AppConstants.paymentAndBookingSuccess,
                     style: TextStyle(
                       fontFamily: AppConstants.fontFamily,
                       fontWeight: FontWeight.w700,
-                      fontSize: 17.sp,
+                      fontSize: 20.sp,
                     ),
                   ),
                   SizedBox(height: 20.h,),
@@ -135,6 +138,9 @@ class Ticket extends StatelessWidget {
                     height: 90.h,
                   ),
                   CustomButtonWithOnlyText(
+                    onTap: (){
+                      showAlert(context);
+                    },
                       color: AppStyles.primaryColor,
                       text: AppConstants.downloadTicket,
                       textColor: Colors.white)
@@ -144,4 +150,22 @@ class Ticket extends StatelessWidget {
           ),
         ));
   }
+}
+void showAlert(context)
+{
+  showDialog(
+    context: context,
+    builder: (context)=>   CustomAlert(txt: AppConstants.downloadSuccess,
+        imagePath: 'assets/images/done.gif',
+        actions: [
+          CustomButtonWithOnlyText(
+            onTap: (){
+              context.pushAndRemove(const DashboardScreen());
+            },
+
+              color: AppStyles.primaryColor, text: AppConstants.backToHome, textColor: Colors.white)
+        ]
+    )
+
+  );
 }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/pressentation/screens/verification_screen.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
+import 'package:tourism_app/utils/app_styles.dart';
 
 import '../../utils/app_constants.dart';
 import '../widgets/row_with_icon_and_column.dart';
@@ -13,14 +13,19 @@ class ForgetPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isPressed =false;
+
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
+
         titleSpacing: 0,
         centerTitle: true,
         title: Text(
           AppConstants.forgetPassword,
           style: TextStyle(
-              fontFamily: "Tajawal",
+              fontFamily:AppConstants.fontFamily,
               fontSize: 16.sp,
               fontWeight: FontWeight.w700),
         ),
@@ -40,7 +45,7 @@ class ForgetPasswordScreen extends StatelessWidget {
           Text(
             AppConstants.chooseTheMethod,
             style: TextStyle(
-                fontFamily: "Tajawal",
+                fontFamily:AppConstants.fontFamily,
                 fontWeight: FontWeight.w800,
                 fontSize: 12.sp),
           ),
@@ -61,13 +66,13 @@ class ForgetPasswordScreen extends StatelessWidget {
             secondText: AppConstants.myEmail,
           ),
           SizedBox(
-            height: 70.h,
+            height: 100.h,
           ),
           CustomButtonWithOnlyText(
             onTap: (){
-              context.push(VerificationScreen());
+              context.push(const VerificationScreen());
             },
-              color: const Color(0xffba7b0be),
+              color:isPressed==false? const Color(0xffba7b0be):AppStyles.primaryColor,
               text: AppConstants.follow,
               textColor: Colors.black)
         ],

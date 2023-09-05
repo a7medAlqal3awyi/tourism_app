@@ -6,7 +6,6 @@ import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.d
 import '../../utils/app_constants.dart';
 import '../../utils/app_styles.dart';
 import '../widgets/patment_option.dart';
-import '../widgets/selection_widget.dart';
 import 'add_new_credit.dart';
 
 enum SingingCharacter { lafayette, jefferson }
@@ -19,7 +18,7 @@ class PaymentScreen extends StatefulWidget {
 }
 
 class _PaymentScreenState extends State<PaymentScreen> {
-
+  int selectedValue=0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,12 +33,12 @@ class _PaymentScreenState extends State<PaymentScreen> {
             ),
           ),
         ),
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding:  EdgeInsets.symmetric(horizontal: 15.h),
+              child: Text(
                 AppConstants.paymentMethod,
                 style: TextStyle(
                   fontFamily: AppConstants.fontFamily,
@@ -47,16 +46,62 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   fontSize: 14.sp,
                 ),
               ),
+            ),
 
-              SizedBox(
-                height: 10.h,
+            SizedBox(
+              height: 10.h,
+            ),
+            ListTile(
+              title: PaymentOptions(
+                imagePath: 'assets/images/Credit.png',
+                txt: AppConstants.credit,
               ),
-
-              const RadioListTileExample(),
-              SizedBox(
-                height: 10.h,
+              trailing: Radio<int>(
+                activeColor: AppStyles.primaryColor,
+                value: 0,
+                groupValue: selectedValue,
+                onChanged: (value) {
+                  setState(() {
+                    selectedValue = value!;
+                  });
+                },
               ),
-              GestureDetector(
+            ),
+            ListTile(
+              title: PaymentOptions(
+                  imagePath: 'assets/images/ApplePay.png',
+                  txt: AppConstants.applePay),
+              trailing: Radio<int>(
+                activeColor: AppStyles.primaryColor,
+                value: 1,
+                groupValue: selectedValue,
+                onChanged: (value) {
+                  setState(() {
+                    selectedValue = value!;
+                  });
+                },
+              ),
+            ),
+            ListTile(
+              title:  PaymentOptions(
+                  imagePath: 'assets/images/PayPal.png', txt: AppConstants.paypal),
+              trailing: Radio<int>(
+                activeColor: AppStyles.primaryColor,
+                value: 2,
+                groupValue: selectedValue,
+                onChanged: (value) {
+                  setState(() {
+                    selectedValue = value!;
+                  });
+                },
+              ),
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+            GestureDetector(
+              child: Padding(
+                padding:  EdgeInsets.symmetric(horizontal: 15.h),
                 child: Text(
                   AppConstants.addCredit,
                   style: TextStyle(
@@ -66,21 +111,26 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     fontSize: 12.sp,
                   ),
                 ),
-                onTap: () {
-                  context.push(const AddNewCreditScreen());
-                },
               ),
-              Spacer(),
-              CustomButtonWithOnlyText(
+              onTap: () {
+                context.push(const AddNewCreditScreen());
+              },
+            ),
+            const Spacer(),
+
+
+
+            Center(
+              child: CustomButtonWithOnlyText(
                   color: AppStyles.primaryColor,
                   text: AppConstants.follow,
                   textColor: Colors.white),
-              SizedBox(
-                height: 40.h,
-              ),
-              // RadioListTileApp()
-            ],
-          ),
+            ),
+            SizedBox(
+              height: 40.h,
+            ),
+            // RadioListTileApp()
+          ],
         ));
   }
 }

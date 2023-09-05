@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:tourism_app/pressentation/screens/on_boarding/on_boarding_screen.dart';
+import 'package:tourism_app/pressentation/screens/dashboard_screen.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) => MaterialApp(
+        color: Colors.white,
         theme: ThemeData(
           useMaterial3: true,
         ),
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
           Locale('ar'),
           Locale('en'),
         ],
-        home:   const OnBoardingScreen(),
+        home:    const DashboardScreen(),
       ),
     );
   }

@@ -11,6 +11,7 @@ import 'package:tourism_app/utils/app_styles.dart';
 
 import '../../widgets/details_app_bar.dart';
 import '../../widgets/full_screen.dart';
+import '../../widgets/horizontal_slider.dart';
 import '../book_date.dart';
 import '../rates_screen.dart';
 
@@ -63,20 +64,7 @@ class DetailsScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Center(
-                        child: Padding(
-                          padding:  EdgeInsets.only(top:15.0.h,bottom: 20.h),
-                          child: Container(
-                            width: 36.w,
-                            height: 5.h,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16.w),
-
-                                color: const Color.fromRGBO(125, 132, 141, 1)
-                            ),
-                          ),
-                        ),
-                      ),
+                      const HorizontalSlider(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -118,7 +106,7 @@ class DetailsScreen extends StatelessWidget {
                                           color: const Color(0xff7D848D),
                                           fontWeight: FontWeight.w700,
                                           fontSize: 14.sp,
-                                          fontFamily: "Tajawal"),
+                                          fontFamily: AppConstants.fontFamily),
                                     )
                                   ],
                                 ),
@@ -265,7 +253,7 @@ class DetailsScreen extends StatelessWidget {
                   ),
                   CustomButtonWithOnlyText(
                     onTap: (){
-                      context.push(BookDateScreen());
+                      context.push(const BookDateScreen());
                     },
                       color: AppStyles.primaryColor,
                       text: AppConstants.bookNow,

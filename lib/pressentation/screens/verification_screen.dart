@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/pressentation/screens/set_new_password.dart';
+import 'package:tourism_app/pressentation/widgets/OTP.dart';
 import 'package:tourism_app/pressentation/widgets/count_down.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
 import 'package:tourism_app/utils/app_constants.dart';
@@ -14,12 +15,15 @@ class VerificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
+
         centerTitle: true,
         title: Text(
           AppConstants.verifyPhoneNumber,
           style: TextStyle(
-            fontFamily: "Tajawal",
+            fontFamily: AppConstants.fontFamily,
             fontWeight: FontWeight.w700,
             fontSize: 16.sp,
           ),
@@ -34,21 +38,22 @@ class VerificationScreen extends StatelessWidget {
             Text(
               AppConstants.weSendVerificationNumber,
               style: TextStyle(
-                  fontFamily: "Tajawal",
+                  fontFamily: AppConstants.fontFamily,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w700),
             ),
             Text(
               AppConstants.number,
               style: TextStyle(
-                  fontFamily: "Tajawal",
+                  fontFamily: AppConstants.fontFamily,
                   fontSize: 14.sp,
-                  color: const Color(0xffFF7029),
+                  color: AppStyles.favColor,
                   fontWeight: FontWeight.w700),
             ),
             SizedBox(
               height: 30.h,
             ),
+            const OTPWidget(),
             SizedBox(
               height: 30.h,
             ),
@@ -62,7 +67,7 @@ class VerificationScreen extends StatelessWidget {
                 Text(
                   AppConstants.codeNotCome,
                   style: TextStyle(
-                      fontFamily: "Tajawal",
+                      fontFamily: AppConstants.fontFamily,
                       fontWeight: FontWeight.w800,
                       color: Colors.grey.shade400,
                       fontSize: 12.sp),
@@ -70,7 +75,7 @@ class VerificationScreen extends StatelessWidget {
                 Text(
                   AppConstants.resend,
                   style: TextStyle(
-                      fontFamily: "Tajawal",
+                      fontFamily: AppConstants.fontFamily,
                       fontWeight: FontWeight.w800,
                       color: Colors.grey.shade800,
                       fontSize: 12.sp),
@@ -82,7 +87,7 @@ class VerificationScreen extends StatelessWidget {
             ),
             CustomButtonWithOnlyText(
               onTap: () {
-                context.push(NewPassword());
+                context.push(const NewPassword());
               },
               color: AppStyles.primaryColor,
               text: AppConstants.follow,

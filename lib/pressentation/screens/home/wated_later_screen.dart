@@ -70,7 +70,11 @@ class WatchedLaterScreen extends StatelessWidget {
     ];
 
     return Scaffold(
+      backgroundColor: Colors.white,
+
       appBar: AppBar(
+        backgroundColor: Colors.white,
+
         centerTitle: true,
         title: Text(
           AppConstants.watchedLater,
@@ -87,8 +91,7 @@ class WatchedLaterScreen extends StatelessWidget {
         scrollDirection: Axis.vertical,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: .9 / 1.25,
-            crossAxisSpacing: 1,
+            childAspectRatio: .8/ 1.1,
             mainAxisSpacing: 0),
         clipBehavior: Clip.none,
         itemBuilder: (BuildContext context, int index) {

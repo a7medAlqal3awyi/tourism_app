@@ -7,7 +7,6 @@ class CalendarScreen extends StatefulWidget {
   const CalendarScreen({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _CalendarScreenState createState() => _CalendarScreenState();
 }
 
@@ -34,8 +33,10 @@ class _CalendarScreenState extends State<CalendarScreen> {
 
         color: Colors.white,
         child: TableCalendar(
+
           locale: 'ar',
           calendarStyle: CalendarStyle(
+
               defaultTextStyle:  const TextStyle(
                 fontWeight: FontWeight.w500,
                 fontSize: 16,
@@ -50,12 +51,10 @@ class _CalendarScreenState extends State<CalendarScreen> {
                   borderRadius: BorderRadius.circular(16),
                   color: Colors.grey.withOpacity(.2),
                   style: BorderStyle.none
-              )
+              ),
           ),
           headerStyle: HeaderStyle(
-
               titleCentered: true,
-
               formatButtonVisible: false,
               titleTextStyle: TextStyle(
                 fontWeight: FontWeight.w700,
@@ -70,7 +69,9 @@ class _CalendarScreenState extends State<CalendarScreen> {
           ),
           daysOfWeekHeight: 50,
           daysOfWeekStyle: DaysOfWeekStyle(
-
+            decoration: const BoxDecoration(
+              color: Colors.white,
+            ),
             weekdayStyle: TextStyle(
                 fontSize: 10.sp,
                 fontFamily: AppConstants.fontFamily,

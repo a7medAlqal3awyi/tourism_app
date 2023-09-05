@@ -31,7 +31,7 @@ class AuthScreen extends StatelessWidget {
                 style: TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 23.5.sp,
-                    fontFamily: "Tajawal"),
+                    fontFamily: AppConstants.fontFamily),
               ),
             ),
           ),
@@ -69,20 +69,20 @@ class AuthScreen extends StatelessWidget {
               imagePath: "assets/images/Apple.svg"),
           ScreenDivider(dividerText: AppConstants.or),
           CustomButtonWithOnlyText(
-            onTap: (){
+            onTap: () {
               context.push(const LoginScreen());
             },
-              textColor: Colors.white,
-              color: AppStyles.primaryColor,
-              text: AppConstants.signWithPassward,
-              ),
+            textColor: Colors.white,
+            color: AppStyles.primaryColor,
+            text: AppConstants.signWithPassward,
+          ),
           SizedBox(
             height: 30.h,
           ),
           TextAndTextButton(
             txt: AppConstants.donotHaveAccount,
             txtButton: AppConstants.createAccount,
-            onPressed: (){
+            onPressed: () {
               context.push(const RegisterScreen());
             },
           ),

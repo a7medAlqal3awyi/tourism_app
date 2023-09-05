@@ -5,7 +5,6 @@ import 'package:full_screen_image_null_safe/full_screen_image_null_safe.dart';
 import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/data/model/suggestion_model.dart';
 
-import 'custom_icon.dart';
 
 Widget fullScreenImage(SuggestionModel suggestionModel, BuildContext context) =>
     FullScreenWidget(
@@ -37,6 +36,7 @@ Widget fullScreenImage(SuggestionModel suggestionModel, BuildContext context) =>
               ),
             ),
           ),
+
           Positioned(
               top: 53.h,
               left: 162.w,

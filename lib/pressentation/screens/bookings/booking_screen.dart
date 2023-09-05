@@ -4,9 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tourism_app/pressentation/widgets/booking_taps.dart';
 
-import '../../utils/app_constants.dart';
-import '../../utils/app_styles.dart';
-import '../widgets/icon_favorite.dart';
+import '../../../utils/app_constants.dart';
 
 class BookingScreen extends StatefulWidget {
   const BookingScreen({super.key});
@@ -24,7 +22,10 @@ class _BookingScreenState extends State<BookingScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+
       appBar: AppBar(
+        backgroundColor: Colors.white,
         centerTitle: true,
         title: Text(
           AppConstants.bookings,
@@ -34,6 +35,7 @@ class _BookingScreenState extends State<BookingScreen>
             fontWeight: FontWeight.w700,
           ),
         ),
+        leading: const Icon(Icons.arrow_back_rounded),
         actions: [
           SvgPicture.asset('assets/images/BlueSearch.svg'),
           SizedBox(

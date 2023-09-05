@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/core/helper.dart';
+import 'package:tourism_app/pressentation/screens/presonal_details_screen.dart';
+import 'package:tourism_app/pressentation/widgets/custom_alert_widget.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
 import 'package:tourism_app/utils/app_constants.dart';
-import 'package:tourism_app/utils/app_styles.dart';
 
 import '../widgets/check_box.dart';
 import '../widgets/custom_form_field.dart';
-import '../widgets/show_diolog.dart';
 
 class NewPassword extends StatelessWidget {
   const NewPassword({
@@ -18,14 +18,16 @@ class NewPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     var passwordController = TextEditingController();
     var verifyPasswordController = TextEditingController();
-    var textControllerConfirm = TextEditingController();
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
+
         title: Text(
           AppConstants.createNewPassword,
           style: TextStyle(
-            fontFamily: "Tajawal",
+            fontFamily: AppConstants.fontFamily,
             fontSize: 16.sp,
             fontWeight: FontWeight.w700,
           ),
@@ -53,14 +55,13 @@ class NewPassword extends StatelessWidget {
                   child: Text(
                     AppConstants.createNewPassword,
                     style: TextStyle(
-                      fontFamily: "Tajawal",
+                      fontFamily: AppConstants.fontFamily,
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
               ),
-              ///ToDo
 
               CustomFormField(
                 type: TextInputType.visiblePassword,
@@ -81,7 +82,7 @@ class NewPassword extends StatelessWidget {
 
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                padding: EdgeInsets.symmetric(horizontal: 10.w),
                 child:  CustomCheckBox(
                   title: AppConstants.rememberMe,
                 ),
@@ -89,9 +90,9 @@ class NewPassword extends StatelessWidget {
               const Spacer(),
               CustomButtonWithOnlyText(
                   onTap: () {
-                    // context.push(const ShowDiaolog());
-                  },
-                  color: const Color(0xffba7b0be),
+                    show(context);
+                    },
+                  color: const Color(0xFFfba7b0be),
                   text: AppConstants.follow,
                   textColor: Colors.black),
               SizedBox(height: 50.h),
@@ -103,3 +104,14 @@ class NewPassword extends StatelessWidget {
   }
 }
 
+void show(BuildContext context){
+  showDialog(
+      context: context, builder: (BuildContext context){
+      return      CustomAlertWidget(
+      imagePath: 'assets/images/Succes.png',
+      message: AppConstants.changePasswordSuccess,
+      onButtonPressed: () {
+        context.pushAndRemove(const PersonalDetailsScreen());
+      },);
+  });
+}

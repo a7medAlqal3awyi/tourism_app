@@ -47,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       AppConstants.signInToYourAccount,
                       style: TextStyle(
                           fontSize: 23.5.sp,
-                          fontFamily: 'Tajawal',
+                          fontFamily: AppConstants.fontFamily,
                           fontWeight: FontWeight.w700),
                     ),
                   ),
@@ -111,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text(
                     AppConstants.doYouForgetPassword,
                     style: TextStyle(
-                      fontFamily: "Tajawal",
+                      fontFamily: AppConstants.fontFamily,
                       color: AppStyles.primaryColor,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w700,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/core/helper.dart';
+import 'package:tourism_app/utils/app_constants.dart';
 
 import '../../data/model/on_boarding_model.dart';
 import '../../utils/app_styles.dart';
@@ -36,7 +37,7 @@ class BuildOnBoardingItem extends StatelessWidget {
               height: 1.9,
               fontWeight: FontWeight.w500,
               fontSize: 12.sp,
-              fontFamily: 'Tajawal',
+              fontFamily: AppConstants.fontFamily,
             ),
           ),
         ),
@@ -60,23 +61,6 @@ class BuildOnBoardingItem extends StatelessWidget {
                 ),
               ),
             ),
-            // Positioned(
-            //   bottom:90 ,
-            //   left: MediaQuery.of(context).size.width/2.5,
-            //   child: SmoothPageIndicator(
-            //     effect: SlideEffect(
-            //       activeDotColor: AppStyles.favColor,
-            //       dotWidth: 22,
-            //       dotHeight:3.h,
-            //       spacing: 0,
-            //
-            //         type: SlideType.normal,
-            //       radius: 5,
-            //       dotColor: Colors.white
-            //     ),
-            //     axisDirection: Axis.horizontal,
-            //       controller: boardingController, count: 3),
-            // ),
             Positioned(
               bottom: 90,
               left: MediaQuery.of(context).size.width / 2.5,

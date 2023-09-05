@@ -97,7 +97,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: ListView(
+
         physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.vertical,
         shrinkWrap: false,
@@ -112,7 +114,7 @@ class HomeScreen extends StatelessWidget {
                   child: Text(
                     AppConstants.weHereToServeYou,
                     style: TextStyle(
-                        fontFamily: "Tajawal",
+                        fontFamily:AppConstants.fontFamily,
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w700),
                   )),

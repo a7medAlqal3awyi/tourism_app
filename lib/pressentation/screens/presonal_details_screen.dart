@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:intl/intl.dart';
+import 'package:tourism_app/core/helper.dart';
+import 'package:tourism_app/pressentation/screens/dashboard_screen.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 
@@ -30,7 +30,7 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
           style: TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: 16.sp,
-              fontFamily: "Tajawal"),
+              fontFamily: AppConstants.fontFamily),
         ),
         centerTitle: true,
       ),
@@ -65,7 +65,7 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                   style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 12.sp,
-                      fontFamily: "Tajawal"),
+                      fontFamily: AppConstants.fontFamily),
                 ),
               ),
               SizedBox(
@@ -76,7 +76,7 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 14.sp,
-                  fontFamily: "Tajawal",
+                  fontFamily: AppConstants.fontFamily,
                 ),
               ),
               CustomFormField(
@@ -91,7 +91,7 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 14.sp,
-                  fontFamily: "Tajawal",
+                  fontFamily: AppConstants.fontFamily,
                 ),
               ),
               CustomFormField(
@@ -106,19 +106,16 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 14.sp,
-                  fontFamily: "Tajawal",
+                  fontFamily: AppConstants.fontFamily,
                 ),
               ),
-
-              /// ToDo show the date
-              ///
               const TakeBirthDay(),
               Text(
                 AppConstants.yourPhone,
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 14.sp,
-                  fontFamily: "Tajawal",
+                  fontFamily: AppConstants.fontFamily,
                 ),
               ),
               CustomFormField(
@@ -128,9 +125,14 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                 type: TextInputType.phone,
                 label: AppConstants.enterYourPhone,
               ),
-              SizedBox(height:40.h,),
+              SizedBox(
+                height: 40.h,
+              ),
               Center(
                 child: CustomButtonWithOnlyText(
+                    onTap: () {
+                      context.pushAndRemove(const DashboardScreen());
+                    },
                     color: AppStyles.primaryColor,
                     text: AppConstants.follow,
                     textColor: Colors.white),

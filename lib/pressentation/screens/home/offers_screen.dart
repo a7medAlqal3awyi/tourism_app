@@ -63,7 +63,11 @@ class OffersScreen extends StatelessWidget {
     ];
 
     return Scaffold(
+      backgroundColor: Colors.white,
+
       appBar: AppBar(
+        backgroundColor: Colors.white,
+
         centerTitle: true,
         title: Text(
           AppConstants.theOffers,

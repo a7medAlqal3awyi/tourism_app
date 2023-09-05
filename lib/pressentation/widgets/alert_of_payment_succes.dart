@@ -1,27 +1,39 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
 import 'package:tourism_app/utils/app_constants.dart';
-import 'package:tourism_app/utils/app_styles.dart';
 
-class AlertPaymentSuccess extends StatelessWidget {
-  const AlertPaymentSuccess({super.key});
+class CustomAlert extends StatelessWidget {
+  const CustomAlert({super.key, required this.txt, required this.imagePath, required this.actions});
 
+  final String txt;
+  final String imagePath;
+  final List<Widget> actions;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 343.w,
-      height: 369.h,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(16)),
+    return BackdropFilter(
+      filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
       child: AlertDialog(
-        content: Text("Success payment"),
-        actions: [
-          CustomButtonWithOnlyText(
-              color: AppStyles.primaryColor,
-              text: AppConstants.showTicket,
-              textColor: Colors.white,
-          )
-        ],
+        elevation: 0,
+        backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(12.w))),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(imagePath),
+            Text(
+              txt,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 17.6.sp,
+                  fontWeight: FontWeight.w700,
+                  fontFamily: AppConstants.fontFamily),
+            ),
+          ],
+        ),
+        actions: actions,
       ),
     );
   }

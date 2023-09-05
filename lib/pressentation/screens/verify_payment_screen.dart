@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/data/model/offer_model.dart';
+import 'package:tourism_app/pressentation/screens/ticket.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
 import 'package:tourism_app/pressentation/widgets/othe_offer_item.dart';
 
@@ -9,7 +11,6 @@ import '../../utils/app_constants.dart';
 import '../../utils/app_styles.dart';
 import '../widgets/alert_of_payment_succes.dart';
 import '../widgets/row_of_verify_screen.dart';
-
 class PaymentVerification extends StatelessWidget {
   PaymentVerification({super.key, this.offersModel});
 
@@ -18,7 +19,11 @@ class PaymentVerification extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+
       appBar: AppBar(
+        backgroundColor: Colors.white,
+
         centerTitle: true,
         title: Text(
           AppConstants.verifyPayment,
@@ -134,11 +139,9 @@ class PaymentVerification extends StatelessWidget {
             height: 170.h,
           ),
           CustomButtonWithOnlyText(
-
-            ///ToDo
               onTap: () {
-                const AlertPaymentSuccess();
-              },
+                showAlert(context);
+                },
               color: AppStyles.primaryColor,
               text: AppConstants.verifyPayment,
               textColor: Colors.white)
@@ -146,4 +149,48 @@ class PaymentVerification extends StatelessWidget {
       ),
     );
   }
+}
+void showAlert(context) {
+  showDialog(
+
+      context: context,
+      builder: (context) =>  CustomAlert(
+        imagePath: 'assets/images/done.gif',
+        txt: AppConstants.paymentAndBookingSuccess,
+        actions: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: CustomButtonWithOnlyText(
+                    onTap: (){
+                      context.pop(context);
+                    },
+                    color: Colors.grey.shade100,
+                    text: AppConstants.cancelTicket,
+                    textColor: AppStyles.primaryColor,
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: CustomButtonWithOnlyText(
+                    onTap: (){
+                      context.push(const TicketScreen());
+                    },
+                    color: AppStyles.primaryColor,
+                    text: AppConstants.showTicket,
+                    textColor: Colors.white,
+                  ),
+                ),
+              ),
+            ],
+          )
+
+        ],
+      )
+  );
 }

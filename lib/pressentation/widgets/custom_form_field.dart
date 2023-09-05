@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:tourism_app/utils/app_constants.dart';
 
 import '../../utils/app_styles.dart';
 
@@ -21,7 +22,7 @@ Widget CustomFormField({
     Padding(
       padding: EdgeInsets.symmetric(vertical: 15.h,horizontal: 5.w),
       child: Container(
-        color: Colors.grey.shade100,
+        color: Colors.grey.withOpacity(.07),
         child: TextFormField(
           controller: controller,
           keyboardType: type,
@@ -48,6 +49,8 @@ Widget CustomFormField({
               borderRadius: BorderRadius.circular(8.w),
             ),
             hintText: label,
+
+
             enabledBorder: OutlineInputBorder(
               borderSide: const BorderSide(
                   color: Colors.grey, width: 0, style: BorderStyle.none),
@@ -59,7 +62,7 @@ Widget CustomFormField({
                   color: AppStyles.primaryColor,
                 )),
             hintStyle: TextStyle(
-              fontFamily: 'Tajawal',
+              fontFamily: AppConstants.fontFamily,
               fontSize: 14.sp,
               fontWeight: FontWeight.w500,
               color: Colors.grey,
@@ -69,46 +72,3 @@ Widget CustomFormField({
       ),
     );
 
-// class CustomFormField extends StatelessWidget {
-//   CustomFormField({
-//     super.key,
-//     this.onFieldSubmitted,
-//     this.validator,
-//     this.onTap,
-//     this.suffixIconPath,
-//     this.isPassword,
-//     required this.textInputType,
-//     required this.prefixIconPath,
-//     required this.hitText,
-//     required this.textEditingController,
-//   });
-//
-//   final String prefixIconPath;
-//   String? suffixIconPath;
-//   final String hitText;
-//   final TextEditingController textEditingController;
-//   void Function()? onTap;
-//   String? Function(String?)? validator;
-//   TextInputType textInputType;
-//   void Function(String)? onFieldSubmitted;
-//   bool? isPassword;
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       width: 343.w,
-//       height: 70.h,
-//       margin: EdgeInsets.all(10.w),
-//       color: Colors.grey.shade100,
-//       padding: EdgeInsets.all(8.0.w),
-//       child: TextFormField(
-//         controller: textEditingController,
-//         obscureText: isPassword!,
-//         onTap: onTap,
-//         validator: validator,
-//         keyboardType: textInputType,
-//         onFieldSubmitted: onFieldSubmitted,
-//       ),
-//     );
-//   }
-// }

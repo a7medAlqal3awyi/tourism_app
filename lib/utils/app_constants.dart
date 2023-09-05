@@ -75,6 +75,7 @@ class AppConstants {
   static String searchByPlaceOrCountry =" قم بالبحث بإسم المكان او البلد";
   static String labikOmraa =" لبيك عمرة";
   static String makaaSudia =" مكة - السعودية";
+  static String madinaSudia =" المدينة - السعودية";
   static String aqsaDes =" أول القبلتين";
   static String aqsaLoc ="الاقصي -القدس-فلسطين";
   static String antherOffers ="عروض أخرى";
@@ -101,6 +102,9 @@ class AppConstants {
   static String sharmElshekh ="شرم الشيخ";
   static String southSini ="جنوب سيناء";
   static String search ="البحث";
+  static String searchResult32 ="نتائج البحث (32)";
+  static String showResult32a ="عرض (32 نتيجة)";
+  static String searchResul ="نتائج البحث";
   static String suggestedForYou ="مقترح لك ";
   static String  inTourism="سياحة داخلية ";
   static String outTourism ="سياحة خارجية ";
@@ -128,6 +132,7 @@ class AppConstants {
   static String rooms ="الغرف";
   static String dateOfBook ="تاريخ الحجز";
   static String rates ="التقييمات";
+  static String theRate ="التقييم";
   static String writeYrRates ="اكتب تقييمك";
   static String ahmedAlqal3awyi ="احمد القلعاوي ";
   static String date ="6 اكتوبر 2023";
@@ -164,6 +169,7 @@ class AppConstants {
   static String downloadTicket ="تحميل التزكرة";
   static String paymentAndBookingSuccess ="تم الدفع و حجز الرحلة بنجاح";
   static String bookStart ="بداية الحجز";
+  static String downloadSuccess ="تم التحميل بنجاح";
   static String bookEnd ="نهاية الحجز";
   static String hotel ="الفندق";
   static String bookings ="الحجوزات";
@@ -211,5 +217,23 @@ class AppConstants {
   static String deleteAcc ="حذف الحساب";
   static String english ="الإنجليزية";
   static String arabic ="العربية";
+  static String almadina ="المدينة";
+  static String makka ="مكه";
+  static String alsudia ="المملكة العربية السعودية";
+  static String filterSearchResult ="فلتره نتائج البحث";
+  static String reSet ="إعادة تعيين";
+  static String sortResultAcroding ="ترتيب النتائج حسب";
+  static String showResult ="عرض (32 نتيجة)";
+  static String villas ="فيلات";
+  static String resorts ="منتجعات";
+  static String pool ="حمام سباحة";
+  static String availableService ="الخدمات المتاحة";
+  static String lowestPrice ="الاقل سعراً";
+  static String highestPrice ="الاقل سعراً";
+  static String price ="السعر";
+  static String cancelTicket ="إلغاء";
+  static String highestRated ="الاعلى تقييماً";
+  static String highestPopular ="الاعلى شعبية";
+  static String backToHome ="عودة للرئيسية";
 
 }

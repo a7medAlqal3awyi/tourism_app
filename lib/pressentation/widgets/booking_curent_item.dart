@@ -3,9 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tourism_app/pressentation/widgets/blur_alert.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
-import 'package:tourism_app/pressentation/widgets/show_diolog.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
@@ -35,10 +33,6 @@ class CurrentBooking extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        // SizedBox(
-                        //   width: 150.w,
-                        //   height: 150.h,
-                        // ),
                         Text(
                           AppConstants.doYouWantToCancelBooking,
                           style: TextStyle(
@@ -46,17 +40,18 @@ class CurrentBooking extends StatelessWidget {
                               fontWeight: FontWeight.w700,
                               fontSize: 20.sp),
                         ),
-                        Divider(
+                        const Divider(
                           height: 3,
                         ),
                         Row(
                           children: [
                             Expanded(
-                                child: CustomButtonWithOnlyText(
-                              color: Colors.white,
-                              text: AppConstants.cancel,
-                              textColor: AppStyles.primaryColor,
-                            )),
+                              child: CustomButtonWithOnlyText(
+                                color: Colors.white,
+                                text: AppConstants.cancel,
+                                textColor: AppStyles.primaryColor,
+                              ),
+                            ),
                             SizedBox(
                               width: 5.w,
                             ),
