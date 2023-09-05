@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tourism_app/core/helper.dart';
-import 'package:tourism_app/pressentation/screens/payment_screen.dart';
 import 'package:tourism_app/pressentation/widgets/booking_personal_details_widget.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 import 'package:tourism_app/utils/app_styles.dart';
+
+import '../payment/payment_screen.dart';
 
 class BookingPersonalDetails extends StatelessWidget {
   const BookingPersonalDetails({super.key});

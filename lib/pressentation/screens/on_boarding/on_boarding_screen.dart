@@ -5,7 +5,7 @@ import 'package:tourism_app/pressentation/widgets/on_boarding_item.dart';
 
 import '../../../data/model/on_boarding_model.dart';
 import '../../../utils/app_constants.dart';
-import '../auth_creeen.dart';
+import '../auth_screeen.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});

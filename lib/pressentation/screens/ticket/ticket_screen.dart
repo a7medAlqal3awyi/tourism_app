@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tourism_app/core/helper.dart';
-import 'package:tourism_app/pressentation/screens/dashboard_screen.dart';
+import 'package:tourism_app/pressentation/screens/dashboard/dashboard_screen.dart';
 import 'package:tourism_app/pressentation/widgets/alert_of_payment_succes.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
-import '../../utils/app_constants.dart';
-import '../widgets/ticket_row.dart';
+import '../../../utils/app_constants.dart';
+import '../../widgets/ticket_row.dart';
 
 class TicketScreen extends StatelessWidget {
   const TicketScreen({super.key});

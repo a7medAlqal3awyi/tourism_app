@@ -4,11 +4,11 @@ import 'package:icon_broken/icon_broken.dart';
 import 'package:tourism_app/pressentation/widgets/watched_later_item.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
-import '../../data/model/watched_later_model.dart';
-import '../../utils/app_constants.dart';
-import '../widgets/row_of_search_result.dart';
-import '../widgets/search_widget_of_scearch_screen.dart';
-import '../widgets/show_filter_result.dart';
+import '../../../data/model/watched_later_model.dart';
+import '../../../utils/app_constants.dart';
+import '../../widgets/row_of_search_result.dart';
+import '../../widgets/search_widget_of_scearch_screen.dart';
+import '../../widgets/show_filter_result.dart';
 
 class SearchResultScreen extends StatelessWidget {
   const SearchResultScreen({

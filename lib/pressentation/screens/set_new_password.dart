@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/core/helper.dart';
-import 'package:tourism_app/pressentation/screens/presonal_details_screen.dart';
+import 'package:tourism_app/pressentation/screens/profile/presonal_details_screen.dart';
 import 'package:tourism_app/pressentation/widgets/custom_alert_widget.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
 import 'package:tourism_app/utils/app_constants.dart';

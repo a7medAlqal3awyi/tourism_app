@@ -6,7 +6,7 @@ import 'package:tourism_app/pressentation/widgets/row_of_text_and_X.dart';
 import '../../../utils/app_constants.dart';
 import '../../widgets/double_text_without_icon.dart';
 import '../../widgets/search_widget_of_scearch_screen.dart';
-import '../search_result_screen.dart';
+import 'search_result_screen.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});

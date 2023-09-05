@@ -4,7 +4,7 @@ import 'package:tourism_app/data/model/suggestion_model.dart';
 import 'package:tourism_app/pressentation/widgets/hotel_tap_bar.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 
-import '../widgets/faclites_block.dart';
+import '../../widgets/faclites_block.dart';
 
 class VendorProfileScreen extends StatelessWidget {
   const VendorProfileScreen({super.key, required this.suggestionModel});

@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/pressentation/screens/bookings/booking_screen.dart';
-import 'package:tourism_app/pressentation/screens/edit_profile.dart';
-import 'package:tourism_app/pressentation/screens/setting_screen.dart';
+import 'package:tourism_app/pressentation/screens/profile/edit_profile.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 import 'package:tourism_app/utils/app_styles.dart';
-import '../widgets/profile_app_bar.dart';
-import '../widgets/row_of_profile.dart';
-import '../widgets/vedio_player_widget.dart';
-import 'ContactUsScreen.dart';
+import '../../widgets/profile_app_bar.dart';
+import '../../widgets/row_of_profile.dart';
+import '../../widgets/vedio_player_widget.dart';
+import '../settings/ContactUsScreen.dart';
+import '../settings/setting_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});

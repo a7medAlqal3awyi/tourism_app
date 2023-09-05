@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/core/helper.dart';
-import 'package:tourism_app/pressentation/screens/verify_payment_screen.dart';
+import 'package:tourism_app/pressentation/screens/payment/verify_payment_screen.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
-import '../../utils/app_constants.dart';
-import '../widgets/add_new_card_widget.dart';
+import '../../../utils/app_constants.dart';
+import '../../widgets/add_new_card_widget.dart';
 
 class AddNewCreditScreen extends StatelessWidget {
   const AddNewCreditScreen({super.key});

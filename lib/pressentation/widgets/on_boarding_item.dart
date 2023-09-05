@@ -5,7 +5,7 @@ import 'package:tourism_app/utils/app_constants.dart';
 
 import '../../data/model/on_boarding_model.dart';
 import '../../utils/app_styles.dart';
-import '../screens/auth_creeen.dart';
+import '../screens/auth_screeen.dart';
 
 class BuildOnBoardingItem extends StatelessWidget {
   const BuildOnBoardingItem({super.key, required this.model, required this.isLast, required this.boardingController, required this.progressValue});

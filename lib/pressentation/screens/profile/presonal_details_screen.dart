@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/core/helper.dart';
-import 'package:tourism_app/pressentation/screens/dashboard_screen.dart';
+import 'package:tourism_app/pressentation/screens/dashboard/dashboard_screen.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 
-import '../../utils/app_styles.dart';
-import '../widgets/custom_form_field.dart';
-import '../widgets/take_bith_day.dart';
+import '../../../utils/app_styles.dart';
+import '../../widgets/custom_form_field.dart';
+import '../../widgets/take_bith_day.dart';
+
 
 class PersonalDetailsScreen extends StatefulWidget {
   const PersonalDetailsScreen({super.key});

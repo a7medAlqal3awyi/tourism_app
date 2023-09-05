@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:tourism_app/core/helper.dart';
 
 import '../../utils/app_constants.dart';
-import '../screens/home/search_screen.dart';
+import '../screens/search/search_screen.dart';
 
 class HomeSearch extends StatelessWidget {
   const HomeSearch({super.key,});

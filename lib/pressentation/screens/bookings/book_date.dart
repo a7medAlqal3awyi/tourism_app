@@ -5,8 +5,8 @@ import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.d
 import 'package:tourism_app/utils/app_constants.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
-import '../widgets/booking_details.dart';
-import '../widgets/month_calender.dart';
+import '../../widgets/booking_details.dart';
+import '../../widgets/month_calender.dart';
 import 'booking_personal_details.dart';
 
 class BookDateScreen extends StatelessWidget {

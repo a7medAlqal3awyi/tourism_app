@@ -4,8 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
-import '../../utils/app_constants.dart';
-import '../widgets/edit_profile_row.dart';
+import '../../../utils/app_constants.dart';
+import '../../widgets/edit_profile_row.dart';
 
 class EditProfileScreen extends StatelessWidget {
   const EditProfileScreen({super.key});

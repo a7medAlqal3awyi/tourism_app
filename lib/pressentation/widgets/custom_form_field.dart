@@ -10,6 +10,7 @@ Widget CustomFormField({
   required TextInputType type,
   onSubmit,
   onChange,
+  suffix,
   onTap,
   bool isPassword = false,
   String? Function(String?)? validator,
@@ -22,7 +23,7 @@ Widget CustomFormField({
     Padding(
       padding: EdgeInsets.symmetric(vertical: 15.h,horizontal: 5.w),
       child: Container(
-        color: Colors.grey.withOpacity(.07),
+        color: Colors.grey.shade100,
         child: TextFormField(
           controller: controller,
           keyboardType: type,
@@ -39,17 +40,16 @@ Widget CustomFormField({
                 prefixIconPath!,
               ),
             ),
-            suffixIcon: Padding(
-                padding: EdgeInsets.symmetric(vertical:15.w),
-                child: SvgPicture.asset(
-                  suffixIconPath!,
-                  color: Colors.grey,
-                )),
+            suffixIcon: suffix != null
+                ? IconButton(
+              onPressed: suffixPressed,
+              icon: Icon(suffix),
+            )
+                : null,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.w),
             ),
             hintText: label,
-
 
             enabledBorder: OutlineInputBorder(
               borderSide: const BorderSide(

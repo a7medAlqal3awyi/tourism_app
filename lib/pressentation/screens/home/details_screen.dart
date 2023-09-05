@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/data/model/suggestion_model.dart';
-import 'package:tourism_app/pressentation/screens/vendor_profile.dart';
+import 'package:tourism_app/pressentation/screens/profile/vendor_profile.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
 import 'package:tourism_app/pressentation/widgets/related_image.dart';
 import 'package:tourism_app/utils/app_constants.dart';
@@ -12,7 +12,7 @@ import 'package:tourism_app/utils/app_styles.dart';
 import '../../widgets/details_app_bar.dart';
 import '../../widgets/full_screen.dart';
 import '../../widgets/horizontal_slider.dart';
-import '../book_date.dart';
+import '../bookings/book_date.dart';
 import '../rates_screen.dart';
 
 class DetailsScreen extends StatelessWidget {

@@ -7,8 +7,8 @@ import 'package:tourism_app/pressentation/widgets/othe_offer_item.dart';
 import 'package:tourism_app/pressentation/widgets/watched_later_item.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
-import '../../data/model/offer_model.dart';
-import '../../utils/app_constants.dart';
+import '../../../data/model/offer_model.dart';
+import '../../../utils/app_constants.dart';
 
 class FavoriteScreen extends StatefulWidget {
   const FavoriteScreen({super.key});

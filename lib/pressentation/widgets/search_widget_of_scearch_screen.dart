@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tourism_app/core/helper.dart';
 
-import '../screens/search_result_screen.dart';
+import '../screens/search/search_result_screen.dart';
 
 class SearchWidgetOfSearchScreen extends StatelessWidget {
   const SearchWidgetOfSearchScreen({super.key});

@@ -5,8 +5,8 @@ import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
-import '../widgets/chat_bubble.dart';
-import '../widgets/send_message_to_company.dart';
+import '../../widgets/chat_bubble.dart';
+import '../../widgets/send_message_to_company.dart';
 import 'call_screen.dart';
 
 class ContactUsScreen extends StatelessWidget {

@@ -3,14 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/data/model/offer_model.dart';
-import 'package:tourism_app/pressentation/screens/ticket.dart';
+import 'package:tourism_app/pressentation/screens/ticket/ticket_screen.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
 import 'package:tourism_app/pressentation/widgets/othe_offer_item.dart';
 
-import '../../utils/app_constants.dart';
-import '../../utils/app_styles.dart';
-import '../widgets/alert_of_payment_succes.dart';
-import '../widgets/row_of_verify_screen.dart';
+import '../../../utils/app_constants.dart';
+import '../../../utils/app_styles.dart';
+import '../../widgets/alert_of_payment_succes.dart';
+import '../../widgets/row_of_verify_screen.dart';
 class PaymentVerification extends StatelessWidget {
   PaymentVerification({super.key, this.offersModel});
 

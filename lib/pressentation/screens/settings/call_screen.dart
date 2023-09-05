@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
-import '../widgets/call_screen_bottom_actions.dart';
-import '../widgets/image_profile_on_calling.dart';
+import '../../widgets/call_screen_bottom_actions.dart';
+import '../../widgets/image_profile_on_calling.dart';
 class CallScreen extends StatelessWidget {
   const CallScreen({super.key});
 
