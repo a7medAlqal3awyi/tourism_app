@@ -1,8 +1,9 @@
+import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tourism_app/controllers/register_cubit/login_cubit.dart';
-import 'package:tourism_app/controllers/register_cubit/login_state.dart';
+import 'package:tourism_app/controllers/register_cubit/register_cubit.dart';
+import 'package:tourism_app/controllers/register_cubit/register_state.dart';
 import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/pressentation/screens/login_screen.dart';
 import 'package:tourism_app/pressentation/screens/profile/presonal_details_screen.dart';
@@ -23,15 +24,19 @@ class RegisterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var emailController = TextEditingController();
     var passwordController = TextEditingController();
+    var nameController = TextEditingController();
+    var phoneController = TextEditingController();
     var formKey = GlobalKey<FormState>();
     return BlocProvider(
       create: (context) => AppRegisterCubit(),
       child: BlocConsumer<AppRegisterCubit, AppRegisterStates>(
         listener: (context, state) {
-          // TODO: implement listener
+          if(state is AppCreateSuccessState){
+            context.push(const PersonalDetailsScreen());
+          }
         },
         builder: (context, state) {
-          var cubit=AppRegisterCubit.get(context);
+          var cubit = AppRegisterCubit.get(context);
           return Scaffold(
             appBar: AppBar(),
             body: SingleChildScrollView(
@@ -53,7 +58,6 @@ class RegisterScreen extends StatelessWidget {
                       ),
                     ),
                     CustomFormField(
-
                       type: TextInputType.emailAddress,
                       controller: emailController,
                       label: AppConstants.email,
@@ -70,13 +74,14 @@ class RegisterScreen extends StatelessWidget {
                       },
                     ),
                     CustomFormField(
-                      isPassword: cubit.isPassword, // suffixPressed: ,
+                      isPassword: cubit.isPassword,
+                      // suffixPressed: ,
                       type: TextInputType.visiblePassword,
                       controller: passwordController,
                       label: AppConstants.password,
                       prefixIconPath: 'assets/images/LockIcon.svg',
                       suffix: cubit.suffix,
-                      suffixPressed: (){
+                      suffixPressed: () {
                         cubit.changePasswordVisibility();
                       },
                       validate: (value) {
@@ -96,15 +101,29 @@ class RegisterScreen extends StatelessWidget {
                     SizedBox(
                       height: 10.h,
                     ),
-                    CustomButtonWithOnlyText(
-                        onTap: () {
-                          if (formKey.currentState!.validate()) {
-                            context.push(const PersonalDetailsScreen());
-                          }
-                        },
-                        color: AppStyles.primaryColor,
-                        text: AppConstants.createAccount,
-                        textColor: Colors.white),
+                    ConditionalBuilder(
+                      condition: state is! AppRegisterLoadingState,
+                      builder: (BuildContext context) =>
+                          CustomButtonWithOnlyText(
+                              onTap: () {
+                                if (formKey.currentState!.validate()) {
+                                  cubit.userRegister(
+                                      email: emailController.text,
+                                      password: passwordController.text,
+                                      name: nameController.text,
+                                      phone: phoneController.text);
+                                }
+                              },
+                              color: AppStyles.primaryColor,
+                              text: AppConstants.createAccount,
+                              textColor: Colors.white),
+                      fallback: (BuildContext context) =>
+                          Center(
+                            child: CircularProgressIndicator(
+                              color: AppStyles.primaryColor,
+                            ),
+                          ),
+                    ),
                     ScreenDivider(dividerText: AppConstants.orCompleteUsing),
                     const RowOfGFA(),
                     SizedBox(
