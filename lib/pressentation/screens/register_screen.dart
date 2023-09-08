@@ -2,8 +2,6 @@ import 'package:conditional_builder_null_safety/conditional_builder_null_safety.
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tourism_app/controllers/register_cubit/register_cubit.dart';
-import 'package:tourism_app/controllers/register_cubit/register_state.dart';
 import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/pressentation/screens/login_screen.dart';
 import 'package:tourism_app/pressentation/screens/profile/presonal_details_screen.dart';
@@ -15,6 +13,8 @@ import 'package:tourism_app/pressentation/widgets/text_and_text_button.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
+import '../../cubit/register_cubit/register_cubit.dart';
+import '../../cubit/register_cubit/register_state.dart';
 import '../widgets/check_with_rich_text.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -24,8 +24,6 @@ class RegisterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var emailController = TextEditingController();
     var passwordController = TextEditingController();
-    var nameController = TextEditingController();
-    var phoneController = TextEditingController();
     var formKey = GlobalKey<FormState>();
     return BlocProvider(
       create: (context) => AppRegisterCubit(),
@@ -38,7 +36,9 @@ class RegisterScreen extends StatelessWidget {
         builder: (context, state) {
           var cubit = AppRegisterCubit.get(context);
           return Scaffold(
-            appBar: AppBar(),
+            appBar: AppBar(
+              backgroundColor: Colors.white,
+            ),
             body: SingleChildScrollView(
               child: Form(
                 key: formKey,
@@ -110,8 +110,8 @@ class RegisterScreen extends StatelessWidget {
                                   cubit.userRegister(
                                       email: emailController.text,
                                       password: passwordController.text,
-                                      name: nameController.text,
-                                      phone: phoneController.text);
+                                      );
+                                  context.pushAndRemove(PersonalDetailsScreen());
                                 }
                               },
                               color: AppStyles.primaryColor,

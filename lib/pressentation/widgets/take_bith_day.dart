@@ -7,7 +7,8 @@ import '../../utils/app_constants.dart';
 import '../../utils/app_styles.dart';
 
 class TakeBirthDay extends StatefulWidget {
-  const TakeBirthDay({super.key});
+   TakeBirthDay({super.key,required this.dateController});
+  TextEditingController dateController = TextEditingController();
 
   @override
   State<TakeBirthDay> createState() => _TakeBirthDayState();
@@ -46,7 +47,7 @@ class _TakeBirthDayState extends State<TakeBirthDay> {
               ),
             ),
             hintStyle: TextStyle(
-              fontFamily: 'Tajawal',
+              fontFamily: AppConstants.fontFamily,
               fontSize: 14.sp,
               fontWeight: FontWeight.w500,
               color: Colors.grey,

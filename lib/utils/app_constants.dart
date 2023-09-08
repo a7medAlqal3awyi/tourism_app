@@ -1,4 +1,10 @@
+String uId = 'uid';
+
 class AppConstants {
+
+
+
+
   static String skip = "تخطي";
   static String si7a = " للسياحة ";
   static String future = " المستقبل ";

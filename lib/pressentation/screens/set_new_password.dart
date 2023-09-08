@@ -23,7 +23,6 @@ class NewPassword extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-
         title: Text(
           AppConstants.createNewPassword,
           style: TextStyle(
@@ -62,28 +61,25 @@ class NewPassword extends StatelessWidget {
                   ),
                 ),
               ),
-
               CustomFormField(
                 type: TextInputType.visiblePassword,
                 prefixIconPath: 'assets/images/LockIcon.svg',
-                label:  AppConstants.enterNewPassword,
+                label: AppConstants.enterNewPassword,
                 suffixIconPath: "assets/images/Hide.svg",
                 controller: passwordController,
                 isPassword: true,
-
               ),
               CustomFormField(
                 type: TextInputType.visiblePassword,
                 prefixIconPath: 'assets/images/LockIcon.svg',
-                label:  AppConstants.verifyNewPassword,
+                label: AppConstants.verifyNewPassword,
                 suffixIconPath: "assets/images/Hide.svg",
                 controller: verifyPasswordController,
                 isPassword: true,
-
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.w),
-                child:  CustomCheckBox(
+                child: CustomCheckBox(
                   title: AppConstants.rememberMe,
                 ),
               ),
@@ -91,8 +87,8 @@ class NewPassword extends StatelessWidget {
               CustomButtonWithOnlyText(
                   onTap: () {
                     show(context);
-                    },
-                  color: const Color(0xFFfba7b0be),
+                  },
+                  color: const Color(0xfffba7b0be),
                   text: AppConstants.follow,
                   textColor: Colors.black),
               SizedBox(height: 50.h),
@@ -104,14 +100,16 @@ class NewPassword extends StatelessWidget {
   }
 }
 
-void show(BuildContext context){
+void show(BuildContext context) {
   showDialog(
-      context: context, builder: (BuildContext context){
-      return      CustomAlertWidget(
-      imagePath: 'assets/images/Succes.png',
-      message: AppConstants.changePasswordSuccess,
-      onButtonPressed: () {
-        context.pushAndRemove(const PersonalDetailsScreen());
-      },);
-  });
+      context: context,
+      builder: (BuildContext context) {
+        return CustomAlertWidget(
+          imagePath: 'assets/images/Succes.png',
+          message: AppConstants.changePasswordSuccess,
+          onButtonPressed: () {
+            context.pushAndRemove(const PersonalDetailsScreen());
+          },
+        );
+      });
 }

@@ -11,4 +11,13 @@ class SuggestionModel {
       required this.image,
       required this.title,
       required this.location});
+Map<String, dynamic>toMap(){
+  return {
+    'name': name,
+    'rate': rate,
+    'image': image,
+    'title': title,
+    'location': location,
+  };
+}
 }

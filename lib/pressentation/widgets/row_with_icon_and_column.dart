@@ -5,37 +5,31 @@ import 'package:tourism_app/utils/app_constants.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
 
-class RowWithIconAndColumn extends StatefulWidget {
+class RowWithIconAndColumn extends StatelessWidget {
   const RowWithIconAndColumn(
       {super.key,
       required this.iconPath,
       required this.firstText,
-      required this.secondText});
+      required this.secondText,
+     required this.onTap});
 
   final String iconPath;
   final String firstText;
   final String secondText;
-  @override
-  State<RowWithIconAndColumn> createState() => _RowWithIconAndColumnState();
-}
+  final void Function()? onTap;
 
-class _RowWithIconAndColumnState extends State<RowWithIconAndColumn> {
-  bool isPressed =false;
+
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-            setState(() {
-              isPressed=!isPressed;
-        });
-      },
+      onTap: onTap,
       child: Container(
         width: 342.w,
         height: 92.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12.w),
-          color:isPressed==false? const Color(0XFFFAFAFA):AppStyles.primaryColor,
+          color: const Color(0XFFFAFAFA),
         ),
         child: Row(
           children: [
@@ -45,7 +39,7 @@ class _RowWithIconAndColumnState extends State<RowWithIconAndColumn> {
               child: CircleAvatar(
                 backgroundColor: const Color(0xffF2F2F2),
                 child: SvgPicture.asset(
-                  widget.iconPath
+                  iconPath
                 ),
               ),
             ),
@@ -57,22 +51,22 @@ class _RowWithIconAndColumnState extends State<RowWithIconAndColumn> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  widget.firstText,
+                  firstText,
                   style: TextStyle(
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w700,
-                      color: isPressed==false? Colors.black:Colors.white,
+                      color:  Colors.black,
                       fontFamily: AppConstants.fontFamily,),
                 ),
                 SizedBox(
                   height: 10.h,
                 ),
                 Text(
-                  widget.secondText,
+                  secondText,
                   style: TextStyle(
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w700,
-                      color: isPressed==false? Colors.black:Colors.white,
+                      color:  Colors.black,
                       fontFamily: AppConstants.fontFamily,),
                 ),
               ],

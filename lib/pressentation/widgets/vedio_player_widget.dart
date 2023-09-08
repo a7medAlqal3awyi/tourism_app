@@ -17,7 +17,7 @@ class _VideoAppState extends State<VideoApp> {
   void initState() {
     _controller = VideoPlayerController.networkUrl(
       Uri.parse(
-        'https://vod-progressive.akamaized.net/exp=1693942573~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4993%2F11%2F299968768%2F1145373722.mp4~hmac=cbf131e1bd6d74854051f155b59a4ef0b9ba511a20b09a7e61983441ffceec55/vimeo-prod-skyfire-std-us/01/4993/11/299968768/1145373722.mp4'
+        'https://vod-progressive.akamaized.net/exp=1694146455~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4993%2F11%2F299968768%2F1145373722.mp4~hmac=ff0bf50604420f6e1a186823d0041b48005779450fdd2621bd4c14948828aa3c/vimeo-prod-skyfire-std-us/01/4993/11/299968768/1145373722.mp4',
       ),
     );
     _initVideoPlayer = _controller.initialize().then((_) {

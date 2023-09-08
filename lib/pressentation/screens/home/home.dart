@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/core/helper.dart';
+import 'package:tourism_app/cubit/app_cubit/app_cubit.dart';
+import 'package:tourism_app/cubit/app_cubit/app_state.dart';
 import 'package:tourism_app/pressentation/widgets/double_text.dart';
 import 'package:tourism_app/pressentation/widgets/home_appbar.dart';
 import 'package:tourism_app/utils/app_constants.dart';
@@ -40,28 +43,31 @@ class HomeScreen extends StatelessWidget {
     SuggestionModel(
         name: AppConstants.azkaSafaHotel,
         image:
-        "https://th.bing.com/th/id/R.a0b057e83a341e92941b9f2c494c6ab1?rik=fplOLhvDYEZBPg&pid=ImgRaw&r=0",
+            "https://th.bing.com/th/id/R.a0b057e83a341e92941b9f2c494c6ab1?rik=fplOLhvDYEZBPg&pid=ImgRaw&r=0",
         title: AppConstants.labikOmraa,
-        location: AppConstants.makaaSudia, rate: 4.9),
+        location: AppConstants.makaaSudia,
+        rate: 4.9),
     SuggestionModel(
         name: AppConstants.alqibla,
         image:
-        "https://images.unsplash.com/photo-1594970484107-5ac7d46a7259?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1548&q=80",
+            "https://images.unsplash.com/photo-1594970484107-5ac7d46a7259?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1548&q=80",
         title: AppConstants.aqsaDes,
-        location: AppConstants.aqsaLoc, rate: 4.8),
+        location: AppConstants.aqsaLoc,
+        rate: 4.8),
     SuggestionModel(
         name: AppConstants.alsa3aHotel,
         image:
-        "https://th.bing.com/th/id/OIP.h2fnjkdyQopo0_YV7wsKeAAAAA?pid=ImgDet&rs=1",
+            "https://th.bing.com/th/id/OIP.h2fnjkdyQopo0_YV7wsKeAAAAA?pid=ImgDet&rs=1",
         title: AppConstants.labikOmraa,
-        location: AppConstants.makaaSudia, rate: 5),
+        location: AppConstants.makaaSudia,
+        rate: 5),
     SuggestionModel(
         name: AppConstants.azkaSafaHotel,
-
         image:
-        "https://images.unsplash.com/photo-1513072064285-240f87fa81e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1527&q=80",
+            "https://images.unsplash.com/photo-1513072064285-240f87fa81e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1527&q=80",
         title: AppConstants.labikOmraa,
-        location: AppConstants.makaaSudia, rate: 4.7),
+        location: AppConstants.makaaSudia,
+        rate: 4.7),
   ];
   final List<WatchedLaterModel> watches = [
     WatchedLaterModel(
@@ -96,79 +102,89 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: ListView(
-
-        physics: const BouncingScrollPhysics(),
-        scrollDirection: Axis.vertical,
-        shrinkWrap: false,
-        children: [
-          Stack(
-            children: [
-              const Ellipse(),
-              const HomeAppBar(),
-              Positioned(
-                  top: 75.h,
-                  right: 15.w,
-                  child: Text(
-                    AppConstants.weHereToServeYou,
-                    style: TextStyle(
-                        fontFamily:AppConstants.fontFamily,
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w700),
-                  )),
-              const HomeSearch(),
-            ],
-          ),
-          Padding(
-            padding:  EdgeInsets.only(top: 8.h),
-            child: const CustomTapBar(),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 8.0.h),
-            child: DoubleText(
-              onTap: () {
-                context.push(const OffersScreen());
-              },
-              firstText: AppConstants.antherOffers,
-              secondText: AppConstants.viewAll,
+    return BlocProvider(
+      create: (context) => AppCubit(),
+      child: BlocConsumer<AppCubit, AppStates>(
+        listener: (context, state) {
+          // TODO: implement listener
+        },
+        builder: (context, state) {
+          return Scaffold(
+            backgroundColor: Colors.white,
+            body: ListView(
+              physics: const BouncingScrollPhysics(),
+              scrollDirection: Axis.vertical,
+              shrinkWrap: false,
+              children: [
+                Stack(
+                  children: [
+                    const Ellipse(),
+                    const HomeAppBar(),
+                    Positioned(
+                        top: 75.h,
+                        right: 15.w,
+                        child: Text(
+                          AppConstants.weHereToServeYou,
+                          style: TextStyle(
+                              fontFamily: AppConstants.fontFamily,
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w700),
+                        )),
+                    const HomeSearch(),
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 8.h),
+                  child: const CustomTapBar(),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8.0.h),
+                  child: DoubleText(
+                    onTap: () {
+                      context.push(const OffersScreen());
+                    },
+                    firstText: AppConstants.antherOffers,
+                    secondText: AppConstants.viewAll,
+                  ),
+                ),
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: const BouncingScrollPhysics(),
+                  itemCount: offers.length,
+                  itemBuilder: (context, index) => OtherOffersItem(
+                    model: offers[index],
+                  ),
+                ),
+                const HotOffers(),
+                Padding(
+                  padding: EdgeInsets.only(top: 8.h, right: 10, left: 10),
+                  child: DoubleText(
+                    onTap: () {
+                      context.push(const WatchedLaterScreen());
+                    },
+                    firstText: AppConstants.watchedLater,
+                    secondText: AppConstants.viewAll,
+                  ),
+                ),
+                GridView.builder(
+                  shrinkWrap: true,
+                  physics: const BouncingScrollPhysics(),
+                  itemCount: watches.length,
+                  scrollDirection: Axis.vertical,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: .9 / 1.25,
+                      crossAxisSpacing: 1,
+                      mainAxisSpacing: 0),
+                  clipBehavior: Clip.none,
+                  itemBuilder: (BuildContext context, int index) {
+                    return WatchedLaterItem(model: watches[index]);
+                  },
+                ),
+              ],
             ),
-          ),
-          ListView.builder(
-            shrinkWrap: true,
-            physics: const BouncingScrollPhysics(),
-            itemCount: offers.length,
-            itemBuilder: (context, index) => OtherOffersItem(
-              model: offers[index],
-            ),
-          ),
-          const HotOffers(),
-          Padding(
-            padding: EdgeInsets.only(top: 8.h, right: 10, left: 10),
-            child: DoubleText(
-                onTap: () {
-                  context.push(const WatchedLaterScreen());
-                },
-                firstText: AppConstants.watchedLater,
-                secondText: AppConstants.viewAll,),
-          ),
-          GridView.builder(
-            shrinkWrap: true,
-            physics: const BouncingScrollPhysics(),
-            itemCount: watches.length,
-            scrollDirection: Axis.vertical,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: .9 / 1.25,
-                crossAxisSpacing: 1,
-                mainAxisSpacing: 0),
-            clipBehavior: Clip.none,
-            itemBuilder: (BuildContext context, int index) {
-              return WatchedLaterItem(model: watches[index]);
-            },
-          ),
-        ],
+          );
+        },
       ),
     );
   }

@@ -3,47 +3,49 @@ import 'package:conditional_builder_null_safety/conditional_builder_null_safety.
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tourism_app/controllers/login_cubit/login_cubit.dart';
-import 'package:tourism_app/controllers/login_cubit/login_state.dart';
+import 'package:tourism_app/core/cache_helper.dart';
 import 'package:tourism_app/core/helper.dart';
+import 'package:tourism_app/pressentation/screens/dashboard/dashboard_screen.dart';
 import 'package:tourism_app/pressentation/screens/register_screen.dart';
 import 'package:tourism_app/pressentation/widgets/check_box.dart';
 import 'package:tourism_app/pressentation/widgets/screen_divider.dart';
+import 'package:tourism_app/pressentation/widgets/show_toast.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
+import '../../cubit/login_cubit/login_cubit.dart';
+import '../../cubit/login_cubit/login_state.dart';
 import '../widgets/custom_button_with_only_text.dart';
 import '../widgets/custom_form_field.dart';
 import '../widgets/row_of_G_G_A.dart';
 import '../widgets/text_and_text_button.dart';
 import 'forget_password_screen.dart';
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
-
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
-
 class _LoginScreenState extends State<LoginScreen> {
   var formKey = GlobalKey<FormState>();
-
   final emailController = TextEditingController();
-
   final passwordController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => AppLoginCubit(),
       child: BlocConsumer<AppLoginCubit, AppLoginStates>(
         listener: (context, state) {
+          if (state is AppLoginErrorState){
+            showToast(text: state.error, state: ToastStates.ERROR);
+          }else
           if(state is AppLoginSuccessState){
-            // SharedP
+            CacheHelper.saveData(key: 'token', value: state.uId);
+            context.pushAndRemove(const DashboardScreen());
           }
         },
         builder: (context, state) {
           var cubit = AppLoginCubit.get(context);
+
           return Scaffold(
             appBar: AppBar(),
             body: Padding(
@@ -111,7 +113,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                     cubit.userLogin(
                                         email: emailController.text,
                                         password: passwordController.text);
-                                    // context.pushAndRemove(HomeScreen());
                                   }
                                 },
                                 color: AppStyles.primaryColor,
@@ -128,7 +129,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       TextButton(
                         onPressed: () {
-                          context.push(const ForgetPasswordScreen());
+                          context.push(
+                              const ForgetPasswordScreen());
                         },
                         child: Text(
                           AppConstants.doYouForgetPassword,

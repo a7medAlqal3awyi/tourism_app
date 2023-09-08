@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tourism_app/data/model/user_info.dart';
 import 'package:tourism_app/data/model/user_model.dart';
 
 import 'register_state.dart';
@@ -24,17 +25,13 @@ class AppRegisterCubit extends Cubit<AppRegisterStates> {
   void userRegister({
     required String email,
     required String password,
-    required String name,
-    required String phone,
-  }) {
+  }) async {
     emit(AppRegisterLoadingState());
     FirebaseAuth.instance
-        .createUserWithEmailAndPassword(
-        email: email, password: password
-    )
+        .createUserWithEmailAndPassword(email: email, password: password)
         .then((value) {
-      debugPrint(value.user!.email);
-      userCreate(email: email , uId: value.user!.uid);
+      print(value.user!.uid);
+      userCreate(email: email, uId: value.user!.uid);
 
     }).catchError((error) {
       emit(AppRegisterErrorState(error.toString()));
@@ -45,7 +42,7 @@ class AppRegisterCubit extends Cubit<AppRegisterStates> {
     required String email,
     required String uId,
   }) {
-    UserModel model = UserModel(email: email,  uId: uId);
+    UserModel model = UserModel(email: email, uId: uId);
 
     FirebaseFirestore.instance
         .collection('users')
@@ -55,6 +52,33 @@ class AppRegisterCubit extends Cubit<AppRegisterStates> {
       emit(AppCreateSuccessState());
     }).catchError((error) {
       emit(AppCreateErrorState(error.toString()));
+      debugPrint(error.toString());
+    });
+  }
+
+  void addProfileInfo({
+    required String name,
+    required String uId,
+    required String email,
+    required String birthDate,
+    required int number,
+  }) {
+    emit(AppPersonalInfoLoadingState());
+    UserInformation userInformation = UserInformation(
+        name: name, email: email, date: birthDate, number: number);
+
+    FirebaseFirestore.instance
+        .collection('userInfo')
+        .doc(uId)
+        .set(userInformation.toMap())
+        .then((value) {
+          emit(AppPersonalInfoSuccessState());
+      debugPrint("Add Success ");
+    }).catchError( (error){
+      debugPrint(error.toString());
+      emit(AppPersonalInfoErrorState(error.toString()));
+      debugPrint(error.toString());
+
     });
   }
 }

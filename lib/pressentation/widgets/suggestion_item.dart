@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/data/model/suggestion_model.dart';
 
 import '../../utils/app_constants.dart';
-import '../screens/home/details_screen.dart';
 import 'icon_favorite.dart';
 
 class SuggestionItem extends StatelessWidget {
@@ -25,6 +23,7 @@ class SuggestionItem extends StatelessWidget {
           clipBehavior: Clip.antiAliasWithSaveLayer,
           child: Container(
             padding: EdgeInsets.all(15.w),
+            color: Colors.white,
             child: Column(
               children: [
                 Stack(
@@ -42,14 +41,14 @@ class SuggestionItem extends StatelessWidget {
                         ),
                       ),
                     ),
-                    FavouriteIcon()
+                    const FavouriteIcon()
                   ],
                 ),
                 SizedBox(
                   height: 10.h,
                 ),
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       model.title,
@@ -59,10 +58,10 @@ class SuggestionItem extends StatelessWidget {
                         fontWeight: FontWeight.w700,
                       ),
                     ),
-                    const Spacer(),
-                    const Icon(
-                      Icons.star,
-                      color: Color(0xffFFD336),
+                    Padding(
+                      padding:
+                          EdgeInsets.only(right: 70.w, bottom: 8.h, left: 3.w),
+                      child: SvgPicture.asset('assets/images/Star.svg'),
                     ),
                     Text(
                       "${model.rate}",
@@ -102,7 +101,7 @@ class SuggestionItem extends StatelessWidget {
                               fontSize: 11, fontWeight: FontWeight.w400),
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ],

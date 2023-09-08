@@ -5,52 +5,46 @@ import 'package:tourism_app/utils/app_constants.dart';
 
 import '../../utils/app_styles.dart';
 
-Widget CustomFormField({
-  required TextEditingController controller,
-  required TextInputType type,
-  onSubmit,
-  onChange,
-  suffix,
-  onTap,
-  bool isPassword = false,
-  String? Function(String?)? validator,
-  required String label,
-  validate,
-   String? prefixIconPath,
-  suffixIconPath,
-  void Function()? suffixPressed,
-}) =>
-    Padding(
-      padding: EdgeInsets.symmetric(vertical: 15.h,horizontal: 10.w),
+class CustomFormFieldWithSuffix extends StatelessWidget {
+   CustomFormFieldWithSuffix(
+      {super.key,
+      required this.controller,
+      required this.suffixPath,
+      required this.label,
+      required this.type,
+      this.onChanged,
+       this.inSubmit,
+      this.validate});
+
+  final TextEditingController controller;
+  final String suffixPath;
+  final String label;
+  final TextInputType type;
+   void Function(String)? onChanged;
+   void Function(String)? inSubmit;
+   String? Function(String?)? validate;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 10.w),
       child: Container(
         color: Colors.grey.shade100,
         child: TextFormField(
           controller: controller,
           keyboardType: type,
-          obscureText: isPassword,
-          onChanged: onChange,
-          onFieldSubmitted: onSubmit,
+          onChanged: onChanged,
+          onFieldSubmitted: inSubmit,
           validator: validate,
           decoration: InputDecoration(
-            prefixIcon: Padding(
-              padding: EdgeInsets.only(top:15.h,
-                  bottom: 15.h,
-                  left:7.w),
-              child: SvgPicture.asset(
-                prefixIconPath!,
-              ),
+            suffixIcon: Padding(
+              padding:  EdgeInsets.all(15.w),
+              child: SvgPicture.asset(suffixPath),
             ),
-            suffixIcon: suffix != null
-                ? IconButton(
-              onPressed: suffixPressed,
-              icon: Icon(suffix),
-            )
-                : null,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.w),
             ),
             hintText: label,
-
             enabledBorder: OutlineInputBorder(
               borderSide: const BorderSide(
                   color: Colors.grey, width: 0, style: BorderStyle.none),
@@ -71,4 +65,5 @@ Widget CustomFormField({
         ),
       ),
     );
-
+  }
+}
