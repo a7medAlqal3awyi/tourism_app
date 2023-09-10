@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,18 +7,17 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tourism_app/core/cache_helper.dart';
 import 'package:tourism_app/pressentation/screens/dashboard/dashboard_screen.dart';
 import 'package:tourism_app/pressentation/screens/on_boarding/splash_screen.dart';
-import 'package:tourism_app/pressentation/screens/profile/presonal_details_screen.dart';
-import 'package:tourism_app/pressentation/screens/register_screen.dart';
 
 import 'core/bloc_observer.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
+  await Firebase.initializeApp();
+
   await CacheHelper.init();
  // bool onBoarding=CacheHelper.getData(key: 'onBoarding');
    var uId = CacheHelper.getData(key: "uId") ;
-  await Firebase.initializeApp();
   Widget widget;
   if(uId !=null)
   {
@@ -31,9 +31,28 @@ void main() async {
   ));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key,required this.startWidget});
   final Widget startWidget;
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState(){
+    FirebaseAuth.instance
+        .authStateChanges()
+        .listen((User? user) {
+      if (user == null) {
+        print('==============   User is currently signed out!');
+      } else {
+        print('================ User is signed in!');
+      }
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +76,7 @@ class MyApp extends StatelessWidget {
           Locale('ar'),
           Locale('en'),
         ],
-        home: startWidget,
+        home: FirebaseAuth.instance.currentUser==null ? const SplashScreen(): DashboardScreen(),
         //startWidget,
       ),
     );

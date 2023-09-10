@@ -14,3 +14,13 @@ class AppLoginErrorState extends AppLoginStates{
 }
 
 class LoginChangePasswordVisibilityState extends AppLoginStates{}
+
+
+class AppLoginWithGoogleLoadingState extends AppLoginStates{}
+class AppLoginWithGoogleSuccessState extends AppLoginStates {}
+class AppLoginWithGoogleErrorState extends AppLoginStates{
+  final String error;
+
+  AppLoginWithGoogleErrorState(this.error);
+
+}

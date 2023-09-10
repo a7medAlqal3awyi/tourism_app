@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/pressentation/screens/bookings/booking_screen.dart';
+import 'package:tourism_app/pressentation/screens/login/login_screen.dart';
 import 'package:tourism_app/pressentation/screens/profile/edit_profile.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button.dart';
 import 'package:tourism_app/utils/app_constants.dart';
@@ -23,7 +25,10 @@ class ProfileScreen extends StatelessWidget {
         Stack(
           clipBehavior: Clip.none,
           children: [
-            const VideoApp(),
+            SizedBox(
+              height: 150.h,
+                width: double.infinity,
+                child: const VideoApp()),
 
             const ProfileAppBar(),
             Positioned(
@@ -41,7 +46,7 @@ class ProfileScreen extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 20.h,
+          height: 40.h,
         ),
         Text(
           AppConstants.ahmedAlqal3awyi,
@@ -97,6 +102,11 @@ class ProfileScreen extends StatelessWidget {
         ),
         SizedBox(height: 20.h,),
         CustomButton(
+          onTap: ()async{
+            await FirebaseAuth.instance.signOut();
+            // ignore: use_build_context_synchronously
+            context.pushAndRemove(const LoginScreen());
+          },
           imagePath: 'assets/images/Logout.svg',
             color: Colors.transparent, text: AppConstants.signOut, textColor: AppStyles.redColor)
       ],

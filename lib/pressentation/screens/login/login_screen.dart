@@ -6,20 +6,20 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourism_app/core/cache_helper.dart';
 import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/pressentation/screens/dashboard/dashboard_screen.dart';
-import 'package:tourism_app/pressentation/screens/register_screen.dart';
+import 'package:tourism_app/pressentation/screens/register/register_screen.dart';
 import 'package:tourism_app/pressentation/widgets/check_box.dart';
 import 'package:tourism_app/pressentation/widgets/screen_divider.dart';
 import 'package:tourism_app/pressentation/widgets/show_toast.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 import 'package:tourism_app/utils/app_styles.dart';
 
-import '../../cubit/login_cubit/login_cubit.dart';
-import '../../cubit/login_cubit/login_state.dart';
-import '../widgets/custom_button_with_only_text.dart';
-import '../widgets/custom_form_field.dart';
-import '../widgets/row_of_G_G_A.dart';
-import '../widgets/text_and_text_button.dart';
-import 'forget_password_screen.dart';
+import '../../../cubit/login_cubit/login_cubit.dart';
+import '../../../cubit/login_cubit/login_state.dart';
+import '../../widgets/custom_button_with_only_text.dart';
+import '../../widgets/custom_form_field.dart';
+import '../../widgets/row_of_G_G_A.dart';
+import '../../widgets/text_and_text_button.dart';
+import '../forget_password_screen.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
   @override

@@ -26,33 +26,33 @@ class AppRegisterCubit extends Cubit<AppRegisterStates> {
     required String email,
     required String password,
   }) async {
-    emit(AppRegisterLoadingState());
+    try {
+      emit(AppRegisterLoadingState());
     FirebaseAuth.instance
-        .createUserWithEmailAndPassword(email: email, password: password)
-        .then((value) {
-      print(value.user!.uid);
-      userCreate(email: email, uId: value.user!.uid);
-
-    }).catchError((error) {
+        .createUserWithEmailAndPassword(email: email, password: password);
+    emit(AppRegisterSuccessState());
+    }on FirebaseAuthException catch (e){
+      emit(AppRegisterErrorState(e.toString()));
+      if (e.code == 'weak-password') {
+      print('The password provided is too weak.');
+    } else if (e.code == 'email-already-in-use') {
+      print('The account already exists for that email.');
+      }}catch (error) {
       emit(AppRegisterErrorState(error.toString()));
-    });
+    }
   }
 
-  void userCreate({
-    required String email,
-    required String uId,
-  }) {
+  void userCreate({required String uId, required String email}) {
     UserModel model = UserModel(email: email, uId: uId);
 
     FirebaseFirestore.instance
-        .collection('users')
+        .collection("users")
         .doc(uId)
         .set(model.toMap())
         .then((value) {
       emit(AppCreateSuccessState());
     }).catchError((error) {
       emit(AppCreateErrorState(error.toString()));
-      debugPrint(error.toString());
     });
   }
 
@@ -72,13 +72,12 @@ class AppRegisterCubit extends Cubit<AppRegisterStates> {
         .doc(uId)
         .set(userInformation.toMap())
         .then((value) {
-          emit(AppPersonalInfoSuccessState());
+      emit(AppPersonalInfoSuccessState());
       debugPrint("Add Success ");
-    }).catchError( (error){
+    }).catchError((error) {
       debugPrint(error.toString());
       emit(AppPersonalInfoErrorState(error.toString()));
       debugPrint(error.toString());
-
     });
   }
 }

@@ -1,6 +1,11 @@
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:tourism_app/core/helper.dart';
+import 'package:tourism_app/pressentation/screens/dashboard/dashboard_screen.dart';
+import 'package:tourism_app/utils/app_constants.dart';
 
 import 'login_state.dart';
 
@@ -22,17 +27,40 @@ class AppLoginCubit extends Cubit<AppLoginStates> {
   void userLogin({
     required String email,
     required String password,
-  }) {
-    emit(AppLoginLoadingState());
-    FirebaseAuth.instance
-        .signInWithEmailAndPassword(email: email, password: password)
-        .then((value) {
-      debugPrint(value.user!.email);
-      debugPrint(value.user!.uid);
-      emit(AppLoginSuccessState(value.user!.uid));
-    }).catchError((error) {
+  }) async {
+    try {
+      emit(AppLoginLoadingState());
+      FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+      emit(AppLoginSuccessState(uId));
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
+      }
+    } catch (error) {
       emit(AppLoginErrorState(error.toString()));
-    });
+    }
   }
 
+  Future signInWithGoogle(BuildContext context) async {
+    try {
+      emit(AppLoginWithGoogleLoadingState());
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+      final GoogleSignInAuthentication? googleAuth =
+          await googleUser?.authentication;
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken,
+      );
+      emit(AppLoginWithGoogleSuccessState());
+       await FirebaseAuth.instance.signInWithCredential(credential);
+      context.pushAndRemove(DashboardScreen());
+    } on FirebaseAuthException catch (error) {
+      emit(AppLoginWithGoogleErrorState(error.message.toString()));
+      print(error.message.toString());
+    }
+  }
 }
