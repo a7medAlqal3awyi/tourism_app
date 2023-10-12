@@ -1,38 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tourism_app/core/helper.dart';
-import 'package:tourism_app/pressentation/screens/dashboard/dashboard_screen.dart';
+import 'package:tourism_app/cubit/app_cubit/app_cubit.dart';
+import 'package:tourism_app/cubit/app_cubit/app_state.dart';
 import 'package:tourism_app/pressentation/widgets/custom_button_with_only_text.dart';
 import 'package:tourism_app/utils/app_constants.dart';
 
-import '../../../cubit/register_cubit/register_cubit.dart';
-import '../../../cubit/register_cubit/register_state.dart';
 import '../../../utils/app_styles.dart';
 import '../../widgets/custom_form_field.dart';
 import '../../widgets/custom_text_form_with_suffix.dart';
 
-class PersonalDetailsScreen extends StatefulWidget {
+class PersonalDetailsScreen extends StatelessWidget {
   const PersonalDetailsScreen({super.key});
 
-  @override
-  State<PersonalDetailsScreen> createState() => _PersonalDetailsScreenState();
-}
-
-class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     var nameController = TextEditingController();
     var emailController = TextEditingController();
     var numberController = TextEditingController();
     var dateController = TextEditingController();
-    int number = int.tryParse(numberController.text) ?? 0;
+
     return BlocProvider(
-      create: (context) => AppRegisterCubit(),
-      child: BlocConsumer<AppRegisterCubit, AppRegisterStates>(
-        listener: (context, state) {},
+      create: (context) => AppCubit(),
+      child: BlocConsumer<AppCubit, AppStates>(
+        listener: (context, state) {
+          // TODO: implement listener
+        },
         builder: (context, state) {
-          var cubit = AppRegisterCubit();
           return Scaffold(
             appBar: AppBar(
               title: Text(
@@ -119,11 +113,10 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                         fontFamily: AppConstants.fontFamily,
                       ),
                     ),
-                    // TakeBirthDay( dateController: dateController),
                     CustomFormFieldWithSuffix(
                       suffixPath: "assets/images/Calendar.svg",
                       controller: dateController,
-                      type: TextInputType.datetime,
+                      type: TextInputType.text,
                       label: AppConstants.enterYourBirthdate,
                     ),
                     Text(
@@ -146,17 +139,7 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                     ),
                     Center(
                       child: CustomButtonWithOnlyText(
-                          onTap: () {
-                              cubit.addProfileInfo(
-                                uId: uId,
-                                name: nameController.text.toString(),
-                                email: emailController.text.toString(),
-                                number: number,
-                                birthDate: dateController.text.toString(),
-                              );
-
-                            context.pushAndRemove(const DashboardScreen());
-                          },
+                          onTap:(){},
                           color: AppStyles.primaryColor,
                           text: AppConstants.follow,
                           textColor: Colors.white),
@@ -164,7 +147,9 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                   ],
                 ),
               ),
+
             ),
+
           );
         },
       ),

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,10 +13,10 @@ import '../../utils/app_constants.dart';
 import '../widgets/row_with_icon_and_column.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
-  const ForgetPasswordScreen({super.key,});
+  const ForgetPasswordScreen({super.key, required this.email,});
 
 
-
+ final String email ;
   @override
   Widget build(BuildContext context) {
     bool isPressed = false;
@@ -76,11 +77,12 @@ class ForgetPasswordScreen extends StatelessWidget {
                   height: 20.h,
                 ),
                 RowWithIconAndColumn(
-                  onTap: () {
+                  onTap: () async {
+                    FirebaseAuth.instance.sendPasswordResetEmail(email: email);
                               },
                   firstText: AppConstants.byEmail,
                   iconPath: 'assets/images/Chat.svg',
-                  secondText: AppConstants.myEmail,
+                  secondText: email,
                 ),
                 SizedBox(
                   height: 100.h,

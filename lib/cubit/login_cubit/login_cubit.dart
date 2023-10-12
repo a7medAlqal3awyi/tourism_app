@@ -1,7 +1,7 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:tourism_app/core/helper.dart';
 import 'package:tourism_app/pressentation/screens/dashboard/dashboard_screen.dart';
@@ -27,6 +27,7 @@ class AppLoginCubit extends Cubit<AppLoginStates> {
   void userLogin({
     required String email,
     required String password,
+    required BuildContext context,
   }) async {
     try {
       emit(AppLoginLoadingState());
@@ -48,7 +49,9 @@ class AppLoginCubit extends Cubit<AppLoginStates> {
     try {
       emit(AppLoginWithGoogleLoadingState());
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-
+      if (googleUser == null) {
+        return ;
+      }
       final GoogleSignInAuthentication? googleAuth =
           await googleUser?.authentication;
       final credential = GoogleAuthProvider.credential(
@@ -56,11 +59,13 @@ class AppLoginCubit extends Cubit<AppLoginStates> {
         idToken: googleAuth?.idToken,
       );
       emit(AppLoginWithGoogleSuccessState());
-       await FirebaseAuth.instance.signInWithCredential(credential);
-      context.pushAndRemove(DashboardScreen());
+      await FirebaseAuth.instance.signInWithCredential(credential);
+      // ignore: use_build_context_synchronously
+      context.pushAndRemove(const DashboardScreen());
     } on FirebaseAuthException catch (error) {
       emit(AppLoginWithGoogleErrorState(error.message.toString()));
-      print(error.message.toString());
+     debugPrint(error.message.toString());
     }
   }
+
 }

@@ -28,16 +28,17 @@ class AppRegisterCubit extends Cubit<AppRegisterStates> {
   }) async {
     try {
       emit(AppRegisterLoadingState());
-    FirebaseAuth.instance
-        .createUserWithEmailAndPassword(email: email, password: password);
-    emit(AppRegisterSuccessState());
-    }on FirebaseAuthException catch (e){
+      FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: email, password: password);
+      emit(AppRegisterSuccessState());
+    } on FirebaseAuthException catch (e) {
       emit(AppRegisterErrorState(e.toString()));
       if (e.code == 'weak-password') {
-      print('The password provided is too weak.');
-    } else if (e.code == 'email-already-in-use') {
-      print('The account already exists for that email.');
-      }}catch (error) {
+        print('The password provided is too weak.');
+      } else if (e.code == 'email-already-in-use') {
+        print('The account already exists for that email.');
+      }
+    } catch (error) {
       emit(AppRegisterErrorState(error.toString()));
     }
   }

@@ -1,4 +1,3 @@
-
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,25 +19,28 @@ import '../../widgets/custom_form_field.dart';
 import '../../widgets/row_of_G_G_A.dart';
 import '../../widgets/text_and_text_button.dart';
 import '../forget_password_screen.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
+
 class _LoginScreenState extends State<LoginScreen> {
   var formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => AppLoginCubit(),
       child: BlocConsumer<AppLoginCubit, AppLoginStates>(
         listener: (context, state) {
-          if (state is AppLoginErrorState){
+          if (state is AppLoginErrorState) {
             showToast(text: state.error, state: ToastStates.ERROR);
-          }else
-          if(state is AppLoginSuccessState){
+          } else if (state is AppLoginSuccessState) {
             CacheHelper.saveData(key: 'token', value: state.uId);
             context.pushAndRemove(const DashboardScreen());
           }
@@ -78,7 +80,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         prefixIconPath: 'assets/images/EmailIcon.svg',
                         suffixIconPath: "",
                         validate: (value) {
-                          if (value.toString().isEmpty) {
+                          if (value
+                              .toString()
+                              .isEmpty) {
                             return AppConstants.emailValidation;
                           } else {
                             return null;
@@ -97,7 +101,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                         suffix: cubit.suffix,
                         validate: (value) {
-                          if (value.toString().isEmpty) {
+                          if (value
+                              .toString()
+                              .isEmpty) {
                             return AppConstants.passwordValidation;
                           } else {
                             return null;
@@ -107,10 +113,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       CustomCheckBox(title: AppConstants.rememberMe),
                       ConditionalBuilder(
                           condition: state is! AppLoginLoadingState,
-                          builder: (context) => CustomButtonWithOnlyText(
+                          builder: (context) =>
+                              CustomButtonWithOnlyText(
                                 onTap: () {
                                   if (formKey.currentState!.validate()) {
-                                    cubit.userLogin(
+                                    cubit.userLogin(context: context,
                                         email: emailController.text,
                                         password: passwordController.text);
                                   }
@@ -119,7 +126,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                 text: AppConstants.signIn,
                                 textColor: Colors.white,
                               ),
-                          fallback: (context) => Center(
+                          fallback: (context) =>
+                              Center(
                                 child: CircularProgressIndicator(
                                   color: AppStyles.primaryColor,
                                 ),
@@ -129,8 +137,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       TextButton(
                         onPressed: () {
-                          context.push(
-                              const ForgetPasswordScreen());
+                          if (emailController.text == "") {
+                            showToast(text: 'الرجاء كتابة البريد الالكتروني',
+                                state: ToastStates.ERROR,);
+                          } else {
+                            context.push(
+                                ForgetPasswordScreen(
+                                  email: emailController.text,
+                                ));
+                          }
                         },
                         child: Text(
                           AppConstants.doYouForgetPassword,

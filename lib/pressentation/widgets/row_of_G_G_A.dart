@@ -36,12 +36,16 @@ class RowOfGFA extends StatelessWidget {
               child: SvgPicture.asset("assets/images/BlueGoogle.svg"),
             ),
           ),
-          Container(
-            decoration:
-                BoxDecoration(borderRadius: BorderRadius.circular(12.w)),
-            width: 43.w,
-            height: 43.h,
-            child: SvgPicture.asset("assets/images/BlueFacebook.svg"),
+          InkWell(
+            onTap: (){
+            },
+            child: Container(
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(12.w)),
+              width: 43.w,
+              height: 43.h,
+              child: SvgPicture.asset("assets/images/BlueFacebook.svg"),
+            ),
           ),
         ],
       ),

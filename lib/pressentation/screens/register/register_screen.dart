@@ -107,8 +107,7 @@ class RegisterScreen extends StatelessWidget {
                                     email: emailController.text,
                                     password: passwordController.text,
                                   );
-                                  context
-                                      .pushAndRemove(const PersonalDetailsScreen());
+                                  context.pushAndRemove(const PersonalDetailsScreen());
                                 }
                               },
                               color: AppStyles.primaryColor,

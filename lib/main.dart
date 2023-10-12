@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tourism_app/core/cache_helper.dart';
 import 'package:tourism_app/pressentation/screens/dashboard/dashboard_screen.dart';
+import 'package:tourism_app/pressentation/screens/login/login_screen.dart';
 import 'package:tourism_app/pressentation/screens/on_boarding/splash_screen.dart';
 
 import 'core/bloc_observer.dart';
@@ -76,9 +77,14 @@ class _MyAppState extends State<MyApp> {
           Locale('ar'),
           Locale('en'),
         ],
-        home: FirebaseAuth.instance.currentUser==null ? const SplashScreen(): DashboardScreen(),
+        home:
+        (FirebaseAuth.instance.currentUser !=null
+            && FirebaseAuth.instance.currentUser!.emailVerified) ?
+        const DashboardScreen(): const LoginScreen(),
         //startWidget,
       ),
     );
   }
 }
+
+
